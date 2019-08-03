@@ -12,4 +12,4 @@ People are welcomed to use, contribute, and share.<br>
 ## Hosting
 
 I have used free hosting provided by gihub, under the name github-pages.<br>
-[avatar-genrator](https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/ "Create cool avatar")
+[Avatar-Genrator](https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/ "Create cool avatar")
