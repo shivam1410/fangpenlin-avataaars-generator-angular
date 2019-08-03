@@ -1,6 +1,6 @@
 # fangpenlin-avataaars-generator-angular
 
-![alt text](https://raw.githubusercontent.com/shivam1410/fangpenlin-avataaars-generator-angular/master/assets/meta.png)
+![alt text](https://raw.githubusercontent.com/shivam1410/fangpenlin-avataaars-generator-angular/master/src/assets/meta.png)
 
 Angular implementation of @fangpenlin's avataaars-generator
 
