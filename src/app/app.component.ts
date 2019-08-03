@@ -19,7 +19,6 @@ import {Skin} from './enums/skin.enum';
 import {saveAs} from 'file-saver';
 import {ActivatedRoute, Router} from '@angular/router';
 import { filter } from 'rxjs/operators'
-import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -332,12 +331,13 @@ export class AppComponent implements OnInit {
   }
 
   tweet(){
-    const url = 'https://twitter.com/intent/tweet?';
+    const twitterurl = 'https://twitter.com/intent/tweet?';
     const hashtags = 'avataaars,avatar,angular';
     const original_referer = 'https://getavataaars.com/'
     const text = 'I just created my avataaars here 😆'
-    let tempurl=`${url}hashtags=${hashtags}&original_referer=${original_referer}&ref_src=twsrc%5Etfw&text=${text}&tw_p=tweetbutton&url=https%3A%2F%2Fgetavataaars.com%2F`;
-    window.open(tempurl);
+    const appurl = ' https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/';
+    let url=`${twitterurl}hashtags=${hashtags}&original_referer=${original_referer}&ref_src=twsrc%5Etfw&text=${text}&tw_p=tweetbutton&url=${appurl}`;
+    window.open(url);
 
   }
 }
