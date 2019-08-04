@@ -9,6 +9,8 @@ Angular implementation of @fangpenlin's avataaars-generator
 I tried to replicate the @fangpenlin's React based avatar genrator in Angular version 6.<br>
 This project is just for self practice in angular.<br>
 People are welcomed to use, contribute, and share.<br>
+The `master` branch contains all the angular code.<br>
+and `gh-pages` branch contains the build files. 
 ## Hosting
 
 I have used free hosting provided by gihub, under the name github-pages.<br>
