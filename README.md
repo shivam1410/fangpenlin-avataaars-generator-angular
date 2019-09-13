@@ -15,3 +15,6 @@ and `gh-pages` branch contains the build files.
 
 I have used free hosting provided by github, under the name github-pages.<br>
 [Avatar-Genrator](https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/ "Create cool avatar")
+
+##
+This project is open to contributions.
