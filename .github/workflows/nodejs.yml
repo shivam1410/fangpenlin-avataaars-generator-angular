@@ -19,9 +19,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
-        npm install
-        npm link @angular/cli
-        ng build --prod --base-href https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/
+        npm ci
+        ng build --prod --base-href "https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/"
         
       env:
         CI: true
