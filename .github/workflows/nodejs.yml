@@ -22,6 +22,6 @@ jobs:
         npm install
         npm install angular-cli-ghpages
         npm run ng -- build --base-href /https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/
-        angular-cli-ghpages -d dist/fangpenlin-avataaars-generator-angular/ --no-silent
+        ngh -d dist/fangpenlin-avataaars-generator-angular/ --no-silent
       env:
         CI: true
