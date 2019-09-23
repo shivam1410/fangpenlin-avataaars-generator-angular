@@ -20,6 +20,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
+        npm link @angular/cli
         ng build --prod --base-href https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/
         angular-cli-ghpages -d dist/fangpenlin-avataaars-generator-angular/ --no-silent
       env:
