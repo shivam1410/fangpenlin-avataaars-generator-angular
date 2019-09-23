@@ -23,9 +23,7 @@ jobs:
         npm install -g angular-cli-ghpages
         npm run ng -- build --base-href /https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/
         ls dist/
-      env:
-        CI: true
-    - name: GitHub Pages Deploy
+    - name: Github pages deploy
       uses: maxheld83/ghpages@v0.2.1
       env :
         BUILD_DIR : "dist/"
