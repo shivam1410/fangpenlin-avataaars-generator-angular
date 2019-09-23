@@ -25,3 +25,9 @@ jobs:
         ngh -d dist/fangpenlin-avataaars-generator-angular/ --no-silent
       env:
         CI: true
+     - name: GitHub Pages Deploy
+       uses: maxheld83/ghpages@v0.2.1
+       env :
+        BUILD_DIR : "public/"
+        secrets : 014ab816f500440e2f286017656108f3208328b8
+
