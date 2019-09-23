@@ -23,7 +23,7 @@ jobs:
         npm install -g angular-cli-ghpages
         npm run ng -- build --base-href /https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/
         ls
-        cd public
+        cd dist
         ls
       env:
         CI: true
