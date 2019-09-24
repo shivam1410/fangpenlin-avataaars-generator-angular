@@ -26,10 +26,11 @@ jobs:
       env :
         CI: true
     - name: deploying to github pages
+      uses: maxheld83/ghpages@v0.2.1
       run: |
         angular-cli-ghpages -d dist/f-a-g-a/
       env :
-        GITHUB_TOKEN: 014ab816f500440e2f286017656108f3208328b8
-        FIRST_NAME: Shivam
-        LAST_NAME: garg
+        BUILD_DIR : "dist/f-a-g-a/"
+      secrets: ["014ab816f500440e2f286017656108f3208328b8"]
+
     
