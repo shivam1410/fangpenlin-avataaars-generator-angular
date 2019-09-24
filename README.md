@@ -16,5 +16,10 @@ and `gh-pages` branch contains the build files.
 I have used free hosting provided by github, under the name github-pages.<br>
 [Avatar-Genrator](https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/ "Create cool avatar")
 
+## CI
+
+Used Github Action for continuous integration. Running the CI server on node v10.x provided by Github Actions.
+
 ##
+
 open to contributions.
