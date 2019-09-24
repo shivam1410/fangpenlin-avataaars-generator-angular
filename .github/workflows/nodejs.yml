@@ -32,6 +32,8 @@ jobs:
         npm install -g --silent gh-pages@2.0.1
         git config user.email "gargshivam482@gmail.com"
         git config user.name "shivam"
+        git add origin git@github.com:shivam1410/fangpenlin-avataaars-generator-angular.git
+        git branch
         ngh -d dist/Avtaar-Generator/
       env :
         GITHUB_TOKEN: 014ab816f500440e2f286017656108f3208328b8
