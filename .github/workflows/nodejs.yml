@@ -23,12 +23,9 @@ jobs:
         npm install -g angular-cli-ghpages
         npm run ng -- build --base-href /https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/
         ls dist/Avtaar-Generator/
+        ngh -d dist/Avtaar-Generator/ --no silent
       env :
         GITHUB_TOKEN: 014ab816f500440e2f286017656108f3208328b8
         FIRST_NAME: Shivam
         LAST_NAME: garg
-    - name: github pages deploy
-      uses: maxheld83/ghpages@v0.2.1
-      env :
-        BUILD_DIR : "dist/Avtaar-Generator"
-      secrets: 014ab816f500440e2f286017656108f3208328b8
+    
