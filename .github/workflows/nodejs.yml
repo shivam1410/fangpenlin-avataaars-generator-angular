@@ -28,8 +28,6 @@ jobs:
     - name: deploying to github pages
       uses: peaceiris/actions-gh-pages@v2.3.2
       env :
-        BUILD_DIR : "dist/f-a-g-a/"
-        secrets: 014ab816f500440e2f286017656108f3208328b8
-        
-
-    
+        ACTIONS_DEPLOY_KEY: 014ab816f500440e2f286017656108f3208328b8
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./dist/f-a-g-a/
