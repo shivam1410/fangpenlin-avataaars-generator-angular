@@ -32,7 +32,7 @@ jobs:
         npm install -g --silent gh-pages@2.0.1
         git config user.email "gargshivam482@gmail.com"
         git config user.name "shivam"
-        git add origin git@github.com:shivam1410/fangpenlin-avataaars-generator-angular.git
+       git remote add origin git@github.com:shivam1410/fangpenlin-avataaars-generator-angular.git
         git branch
         ngh -d dist/Avtaar-Generator/
       env :
