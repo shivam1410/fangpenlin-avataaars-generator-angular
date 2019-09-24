@@ -23,6 +23,6 @@ Used Github Action for continuous integration. Running the CI server on node v10
 
 ![alt text](https://raw.githubusercontent.com/shivam1410/fangpenlin-avataaars-generator-angular/master/src/assets/Screenshot_CI.jpg)
 
-##
+## Open Source 
 
 open to contributions.
