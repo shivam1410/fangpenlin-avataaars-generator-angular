@@ -19,7 +19,11 @@ I have used free hosting provided by github, under the name github-pages.<br>
 ## CI
 
 Used Github Action for continuous integration. Running the CI server on node v10.x provided by Github Actions.
+### Screenshots
 
+![alt text](https://raw.githubusercontent.com/shivam1410/ffangpenlin-avataaars-generator-angular/src/assets/Screenshot_CI.png)
+
+<script src="https://gist.github.com/shivam1410/2dbdf3be41258108b433dceae57fb97a.js"></script>
 ##
 
 open to contributions.
