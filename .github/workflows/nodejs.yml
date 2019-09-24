@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [10.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -26,11 +26,8 @@ jobs:
       env :
         CI: true
     - name: deploying to github pages
-      run: |
-        npm install -g --silent gh-pages@2.0.1
-        ngh -d dist/f-a-g-a/ --no-silent
+      uses: peaceiris/actions-gh-pages@v2.3.2
       env :
-        GITHUB_TOKEN: 014ab816f500440e2f286017656108f3208328b8
-        FIRST_NAME: Shivam
-        LAST_NAME: garg
-    
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./dist/f-a-g-a/
