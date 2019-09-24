@@ -9,6 +9,6 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to Avtaar-Generator!');
+    expect(page.getParagraphText()).toEqual('Welcome to f-a-g-a!');
   });
 });
