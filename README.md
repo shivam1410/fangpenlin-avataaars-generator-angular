@@ -23,7 +23,8 @@ Used Github Action for continuous integration. Running the CI server on node v10
 
 ![alt text](https://raw.githubusercontent.com/shivam1410/fangpenlin-avataaars-generator-angular/master/src/assets/Screenshot_CI.jpg)
 
-"<script src='https://gist.github.com/shivam1410/2dbdf3be41258108b433dceae57fb97a.js'></script>"
+[gist id=2dbdf3be41258108b433dceae57fb97a]
+[gist]http://gist.github.com/2dbdf3be41258108b433dceae57fb97a[/gist]
 ##
 
 open to contributions.
