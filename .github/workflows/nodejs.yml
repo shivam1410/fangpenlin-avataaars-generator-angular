@@ -28,6 +28,6 @@ jobs:
     - name: deploying to github pages
       uses: peaceiris/actions-gh-pages@v2.3.2
       env :
-        ACTIONS_DEPLOY_KEY: 014ab816f500440e2f286017656108f3208328b8
+        ACTIONS_DEPLOY_KEY: ce5b7e5609776cb6fa57e0aa41470c84eb638e75
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./dist/f-a-g-a/
