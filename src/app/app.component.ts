@@ -1,23 +1,16 @@
-import {Component, OnInit, Inject} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
-import {Options} from './services/main.services';
-import {Top} from './enums/tops.enum';
-import {FacialHair} from './enums/facial-hair.enum';
-import {Cloth} from './enums/clothe.enum';
-import {Eyebrow} from './enums/eyebrow.enum';
-import {Mouth} from './enums/mouth.enum';
-import {Accessories} from './enums/accessories.enum';
-import {ClothColor} from './enums/cloth-color.enum';
-import {FacialHairColor} from './enums/facial-hair-color.enum';
-import {Graphic} from './enums/graphic.enum';
-import {HatColor} from './enums/hat-color.enum';
-import {HairColor} from './enums/hair-color.enum';
-import {Face} from './enums/face.enum';
-import {AvatarStyle} from './enums/avatar-style.enum';
-import {Eyes} from './enums/eyes.enum';
-import {Skin} from './enums/skin.enum';
-import {saveAs} from 'file-saver';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+
+import { AvatarComponent } from '../../projects/avatar/src/public-api';
+import { AvatarOptions } from '../../projects/avatar/src/public-api';
+import {
+  Clothes, FacialHair, Top, Eyes, Mouth, Skin, Accessories, Eyebrow,
+  Face, Graphic, FacialHairColor, ClothesColor, HatColor, HairColor,
+  AvatarStyle
+} from '../../projects/avatar/src/public-api';
+
+import { saveAs } from 'file-saver';
+import { ActivatedRoute, Router } from '@angular/router';
 import { filter } from 'rxjs/operators'
 
 @Component({
@@ -27,16 +20,16 @@ import { filter } from 'rxjs/operators'
 })
 export class AppComponent implements OnInit {
   avatarForm: FormGroup;
-  options: Options;
+  options: AvatarOptions;
   public canvasRef: HTMLCanvasElement;
-  public  angularCode ;
+  public angularCode;
   showAngular = false;
   showImage = false;
   showSvg = false;
   svgData: string;
   topsEnum = Top;
   facialHairEnum = FacialHair;
-  clothesEnum = Cloth;
+  clothesEnum = Clothes;
 
 
   accessories: Array<any>;
@@ -55,11 +48,11 @@ export class AppComponent implements OnInit {
   tops: Array<any>;
   avatarStyle: Array<any>;
 
-  constructor(private router: Router, private  activatedRoute: ActivatedRoute) {}
-  
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+
   ngOnInit() {
-    this.options = new Options();
-    
+    this.options = new AvatarOptions();
+
     this.avatarForm = new FormGroup({
       'avatarStyle': new FormControl(this.options.style),
       'top': new FormControl(this.options.top),
@@ -77,16 +70,16 @@ export class AppComponent implements OnInit {
       'face': new FormControl(this.options.face),
       'graphic': new FormControl(this.options.graphic),
     });
-  
+
     this.avatarForm.valueChanges.subscribe(value => {
 
       this.options = value;
-      
+
       this.toggleAngular(false);
-      setTimeout(()=>{
-        return this.toggleSvg(false); 
+      setTimeout(() => {
+        return this.toggleSvg(false);
       }
-        ,0
+        , 0
       );
       this.showColourFabric();
       this.router.navigate([], {
@@ -108,19 +101,19 @@ export class AppComponent implements OnInit {
           graphic: this.options.graphic,
         }
       });
-      
-     });
+
+    });
 
 
     this.tops = this.getEnumTupple(Top);
     this.facialHair = this.getEnumTupple(FacialHair);
-    this.clothe = this.getEnumTupple(Cloth);
+    this.clothe = this.getEnumTupple(Clothes);
     this.eyes = this.getEnumTupple(Eyes);
     this.eyebrow = this.getEnumTupple(Eyebrow);
     this.mouth = this.getEnumTupple(Mouth);
     this.skin = this.getEnumTupple(Skin);
     this.accessories = this.getEnumTupple(Accessories);
-    this.clothColor = this.getEnumTupple(ClothColor);
+    this.clothColor = this.getEnumTupple(ClothesColor);
     this.face = this.getEnumTupple(Face);
     this.facialHairColor = this.getEnumTupple(FacialHairColor);
     this.graphic = this.getEnumTupple(Graphic);
@@ -128,45 +121,45 @@ export class AppComponent implements OnInit {
     this.hairColor = this.getEnumTupple(HairColor);
     this.avatarStyle = this.getEnumTupple(AvatarStyle);
 
-    this.activatedRoute.queryParams.pipe(filter(a=> !!a))
-    .subscribe(data => {
-      if(data['top']){
-        this.options.style = data['avatarStyle'];
-        this.options.top = data['top'];
-        this.options.accessories = data['accessories'];
-        this.options.hairColor = data['hairColor'];
-        this.options.hatColor = data['hatColor'];
-        this.options.facialHair = data['facialHair'];
-        this.options.facialHairColor = data['facialHairColor'];
-        this.options.clothes = data['clothes'];
-        this.options.clothColor = data['clothColor'];
-        this.options.eyes = data['eyes'];
-        this.options.eyebrow = data['eyebrow'];
-        this.options.mouth = data['mouth'];
-        this.options.skin = data['skin'];
-        this.options.face = data['face'];
-        this.options.graphic = data['graphic'];
+    this.activatedRoute.queryParams.pipe(filter(a => !!a))
+      .subscribe(data => {
+        if (data['top']) {
+          this.options.style = data['avatarStyle'];
+          this.options.top = data['top'];
+          this.options.accessories = data['accessories'];
+          this.options.hairColor = data['hairColor'];
+          this.options.hatColor = data['hatColor'];
+          this.options.facialHair = data['facialHair'];
+          this.options.facialHairColor = data['facialHairColor'];
+          this.options.clothes = data['clothes'];
+          this.options.clothColor = data['clothColor'];
+          this.options.eyes = data['eyes'];
+          this.options.eyebrow = data['eyebrow'];
+          this.options.mouth = data['mouth'];
+          this.options.skin = data['skin'];
+          this.options.face = data['face'];
+          this.options.graphic = data['graphic'];
 
-        this.avatarForm.patchValue({
-          'avatarStyle': data['avatarStyle'],
-          'top': data['top'],
-          'accessories': data['accessories'],
-          'hairColor': data['hairColor'],
-          'hatColor': data['hatColor'],
-          'facialHair': data['facialHair'],
-          'facialHairColor': data['facialHairColor'],
-          'clothes': data['clothes'],
-          'clothColor': data['clothColor'],
-          'eyes':  data['eyes'],
-          'eyebrow': data['eyebrow'],
-          'mouth': data['mouth'],
-          'skin': data['skin'],
-          'face': data['face'],
-          'graphic': data['graphic'],
-        });
-      }
-  
-    });
+          this.avatarForm.patchValue({
+            'avatarStyle': data['avatarStyle'],
+            'top': data['top'],
+            'accessories': data['accessories'],
+            'hairColor': data['hairColor'],
+            'hatColor': data['hatColor'],
+            'facialHair': data['facialHair'],
+            'facialHairColor': data['facialHairColor'],
+            'clothes': data['clothes'],
+            'clothColor': data['clothColor'],
+            'eyes': data['eyes'],
+            'eyebrow': data['eyebrow'],
+            'mouth': data['mouth'],
+            'skin': data['skin'],
+            'face': data['face'],
+            'graphic': data['graphic'],
+          });
+        }
+
+      });
   }
 
   getEnumTupple(enumRef: any): Array<any> {
@@ -178,7 +171,7 @@ export class AppComponent implements OnInit {
   }
 
   getRandom() {
-    this.options = new Options();
+    this.options = new AvatarOptions();
 
     this.options.getRandom();
     this.avatarForm.patchValue({
@@ -222,20 +215,20 @@ export class AppComponent implements OnInit {
 
 
   toggleAngular(bool) {
-    if(bool){
+    if (bool) {
       this.showAngular = !this.showAngular;
       this.showImage = false;
       this.showSvg = false;
     }
-    var jsonString = JSON.stringify(this.options,null,' ');
+    var jsonString = JSON.stringify(this.options, null, ' ');
 
     jsonString = jsonString.replace(/[{}]/g, '');
     jsonString = jsonString.replace(/[:]/g, ' =');
     jsonString = jsonString.replace(/[      ]/g, '');
     jsonString = jsonString.replace(/[""]/g, '');
 
-    this.angularCode = "<app-avatar " +jsonString + "></app-avatar>";
-    
+    this.angularCode = "<app-avatar " + jsonString + "></app-avatar>";
+
   }
 
   toggleImage() {
@@ -245,7 +238,7 @@ export class AppComponent implements OnInit {
     this.toggleSvg(false);
   }
   toggleSvg(bool) {
-    if(bool) {
+    if (bool) {
       this.showSvg = !this.showSvg;
       this.showAngular = false;
       this.showImage = false;
@@ -257,11 +250,11 @@ export class AppComponent implements OnInit {
   downloadSvg() {
     const svgNode = document.getElementById('svgid');
     const data = svgNode.innerHTML;
-    const svg = new Blob([data], {type: 'image/svg+xml'});
+    const svg = new Blob([data], { type: 'image/svg+xml' });
     saveAs(svg, 'avatar.svg');
   }
 
-  copyText(inputElement){
+  copyText(inputElement) {
     inputElement.select();
     document.execCommand('copy');
     inputElement.setSelectionRange(0, 0);
@@ -278,7 +271,7 @@ export class AppComponent implements OnInit {
     const anyWindow = window as any;
     const DOMURL = anyWindow.URL || anyWindow.webkitURL || window;
     const data = svgNode.innerHTML;
-    const svg = new Blob([data], {type: 'image/svg+xml'});
+    const svg = new Blob([data], { type: 'image/svg+xml' });
     const img = new Image(canvas.width, canvas.height);
     const url = DOMURL.createObjectURL(svg);
     img.onload = () => {
@@ -298,45 +291,45 @@ export class AppComponent implements OnInit {
     saveAs(imageBlob, fileName);
   }
 
-  showColourFabric(){
-    if((this.options.clothes === this.clothesEnum.BLAZER_SHIRT) || (this.options.clothes ===  this.clothesEnum.BLAZER_SWEATER) ){
+  showColourFabric() {
+    if ((this.options.clothes === this.clothesEnum.BLAZER_SHIRT) || (this.options.clothes === this.clothesEnum.BLAZER_SWEATER)) {
       return false;
     }
     return true;
   }
   showHatColour() {
-    if((this.options.top === this.topsEnum.HIJAB)||(this.options.top === this.topsEnum.TURBAN) ||
-     (this.options.top === this.topsEnum.WINTER_HAT1)||(this.options.top === this.topsEnum.WINTER_HAT2) ||
-     (this.options.top === this.topsEnum.WINTER_HAT3)||(this.options.top === this.topsEnum.WINTER_HAT4)) {
-       return true;
-     }
-     else return false;
+    if ((this.options.top === this.topsEnum.HIJAB) || (this.options.top === this.topsEnum.TURBAN) ||
+      (this.options.top === this.topsEnum.WINTER_HAT1) || (this.options.top === this.topsEnum.WINTER_HAT2) ||
+      (this.options.top === this.topsEnum.WINTER_HAT3) || (this.options.top === this.topsEnum.WINTER_HAT4)) {
+      return true;
+    }
+    else return false;
   }
   showHairColour() {
-    if((this.options.top === this.topsEnum.LONGHAIR_BIGHAIR) || (this.options.top === this.topsEnum.LONGHAIR_BOB) ||
-    (this.options.top === this.topsEnum.LONGHAIR_BUN) || (this.options.top === this.topsEnum.LONGHAIR_CURLY) ||
-    (this.options.top === this.topsEnum.LONGHAIR_CURVY) || (this.options.top === this.topsEnum.LONGHAIR_DREADS) ||
-    (this.options.top === this.topsEnum.LONGHAIR_FRO) || (this.options.top === this.topsEnum.LONGHAIR_FROBAND) ||
-    (this.options.top === this.topsEnum.LONGHAIR_NOTTOOLONG )|| (this.options.top === this.topsEnum.LONGHAIR_MIAWALLACE ) ||
-    (this.options.top === this.topsEnum.LONGHAIR_STRAIGHT )|| (this.options.top === this.topsEnum.LONGHAIR_STRAIGHT2 )||
-    (this.options.top === this.topsEnum.LONGHAIR_STRAIGHTSTRAND )|| (this.options.top === this.topsEnum.SHORTHAIR_DREADS01)||
-    (this.options.top === this.topsEnum.SHORTHAIR_DREADS02)|| (this.options.top === this.topsEnum.SHORTHAIR_FRIZZLE )||
-    (this.options.top === this.topsEnum.SHORTHAIR_SHAGGYMULLET )|| (this.options.top === this.topsEnum.SHORTHAIR_SHORTCURLY )||
-    (this.options.top === this.topsEnum.SHORTHAIR_SHORTFLAT)|| (this.options.top === this.topsEnum.SHORTHAIR_SHORTROUND)|| 
-    (this.options.top === this.topsEnum.SHORTHAIR_SHORTWAVED)|| (this.options.top === this.topsEnum.SHORTHAIR_SIDES)||
-    (this.options.top === this.topsEnum.SHORTHAIR_THECAESAR)|| (this.options.top === this.topsEnum.SHORTHAIR_THECAESARSIDEPART)) {
+    if ((this.options.top === this.topsEnum.LONGHAIR_BIGHAIR) || (this.options.top === this.topsEnum.LONGHAIR_BOB) ||
+      (this.options.top === this.topsEnum.LONGHAIR_BUN) || (this.options.top === this.topsEnum.LONGHAIR_CURLY) ||
+      (this.options.top === this.topsEnum.LONGHAIR_CURVY) || (this.options.top === this.topsEnum.LONGHAIR_DREADS) ||
+      (this.options.top === this.topsEnum.LONGHAIR_FRO) || (this.options.top === this.topsEnum.LONGHAIR_FROBAND) ||
+      (this.options.top === this.topsEnum.LONGHAIR_NOTTOOLONG) || (this.options.top === this.topsEnum.LONGHAIR_MIAWALLACE) ||
+      (this.options.top === this.topsEnum.LONGHAIR_STRAIGHT) || (this.options.top === this.topsEnum.LONGHAIR_STRAIGHT2) ||
+      (this.options.top === this.topsEnum.LONGHAIR_STRAIGHTSTRAND) || (this.options.top === this.topsEnum.SHORTHAIR_DREADS01) ||
+      (this.options.top === this.topsEnum.SHORTHAIR_DREADS02) || (this.options.top === this.topsEnum.SHORTHAIR_FRIZZLE) ||
+      (this.options.top === this.topsEnum.SHORTHAIR_SHAGGYMULLET) || (this.options.top === this.topsEnum.SHORTHAIR_SHORTCURLY) ||
+      (this.options.top === this.topsEnum.SHORTHAIR_SHORTFLAT) || (this.options.top === this.topsEnum.SHORTHAIR_SHORTROUND) ||
+      (this.options.top === this.topsEnum.SHORTHAIR_SHORTWAVED) || (this.options.top === this.topsEnum.SHORTHAIR_SIDES) ||
+      (this.options.top === this.topsEnum.SHORTHAIR_THECAESAR) || (this.options.top === this.topsEnum.SHORTHAIR_THECAESARSIDEPART)) {
       return true;
     }
     else return false;
   }
 
-  tweet(){
+  tweet() {
     const twitterurl = 'https://twitter.com/intent/tweet?';
     const hashtags = 'avataaars,avatar,angular';
     const original_referer = 'https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/';
     const text = 'I just created my avataaars here 😆';
     const appurl = 'https://shivam1410.github.io/fangpenlin-avataaars-generator-angular/';
-    let url=`${twitterurl}hashtags=${hashtags}&original_referer=${original_referer}&ref_src=twsrc%5Etfw&text=${text}&tw_p=tweetbutton&url=${appurl}`;
+    let url = `${twitterurl}hashtags=${hashtags}&original_referer=${original_referer}&ref_src=twsrc%5Etfw&text=${text}&tw_p=tweetbutton&url=${appurl}`;
     window.open(url);
 
   }

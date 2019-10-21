@@ -1,14 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {AvtaarComponent} from './avtaar/avtaar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MainServices} from './services/main.services';
-import {TopsServices} from './services/tops.services';
-import {FaceServices} from './services/face.services';
-import {ColorsServices} from './services/colors.services';
-import {AccessoriesServices} from './services/accessories.services';
-import {ClothesServices} from './services/clothes.services';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -19,11 +12,12 @@ import {MatDividerModule} from '@angular/material/divider';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { RouterModule } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
+import {AvatarComponent} from '../../projects/avatar/src/public-api';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AvtaarComponent
+    AvatarComponent
   ],
   imports: [
     BrowserModule,
@@ -45,12 +39,7 @@ import {MatIconModule} from '@angular/material/icon';
     )
   ],
   providers: [
-    MainServices,
-    TopsServices,
-    FaceServices,
-    ColorsServices,
-    AccessoriesServices,
-    ClothesServices
+    
   ],
   bootstrap: [AppComponent]
 })

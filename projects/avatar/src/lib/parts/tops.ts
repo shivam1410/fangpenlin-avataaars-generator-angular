@@ -1,103 +1,89 @@
-import {Injectable} from '@angular/core';
-import {AccessoriesServices} from './accessories.services';
-import {ColorsServices} from './colors.services';
-import {FaceServices} from './face.services';
-import {Accessories} from '../enums/accessories.enum';
-import {Top} from '../enums/tops.enum';
-import {FacialHair} from '../enums/facial-hair.enum';
-import {FacialHairColor} from '../enums/facial-hair-color.enum';
-import {HairColor} from '../enums/hair-color.enum';
-import {HatColor} from '../enums/hat-color.enum';
+import { Accessories, Top, FacialHair, FacialHairColor, HairColor, HatColor } from '../avatar.enum';
+import { ColorHelper } from './colors';
+import { AccessoriesHelper } from './accessories';
 
-@Injectable()
-export class TopsServices {
-  constructor(private accessoryService: AccessoriesServices, private colorService: ColorsServices, private faceService: FaceServices) {
+export class TopsHelper {
 
-  }
+  public static getTopSvg(top: Top, facialHair: FacialHair, accessories: Accessories, hatColor: HatColor,
+                   facialHairColor: FacialHairColor, hairColor: HairColor) {
 
-  accessory: Accessories;
-
-  public getTopSvg(top: Top, facialHair: FacialHair, accessories: Accessories, hatColor: HatColor,
-                   facialHaircolor: FacialHairColor, hairColor: HairColor) {
-
-    this.accessory = accessories;
     switch (top) {
       case Top.NO_HAIR:
-        return this._getHair(facialHair, facialHaircolor);
+        return TopsHelper.getHair(facialHair, facialHairColor, accessories);
       case Top.EYEPATCH:
-        return this._geteyePatch(facialHair, facialHaircolor);
+        return TopsHelper.getEyePatch(facialHair, facialHairColor, accessories);
       case Top.HAT:
-        return this._getHat(facialHair, facialHaircolor);
+        return TopsHelper.getHat(facialHair, facialHairColor, accessories);
       case Top.HIJAB:
-        return this._getHijab(hatColor);
+        return TopsHelper.getHijab(hatColor, accessories);
       case Top.TURBAN:
-        return this._getTurban(facialHair, facialHaircolor, hatColor);
+        return TopsHelper.getTurban(facialHair, facialHairColor, hatColor, accessories);
       case Top.WINTER_HAT1:
-        return this._getWinterHat1(hatColor, facialHair, facialHaircolor);
+        return TopsHelper.getWinterHat1(hatColor, facialHair, facialHairColor, accessories);
       case Top.WINTER_HAT2:
-        return this._getWinterHat2(hatColor, facialHair, facialHaircolor);
+        return TopsHelper.getWinterHat2(hatColor, facialHair, facialHairColor, accessories);
       case Top.WINTER_HAT3:
-        return this._getWinterHat3(hatColor, facialHair, facialHaircolor);
+        return TopsHelper.getWinterHat3(hatColor, facialHair, facialHairColor, accessories);
       case Top.WINTER_HAT4:
-        return this._getWinterHat4(hatColor, facialHair, facialHaircolor);
+        return TopsHelper.getWinterHat4(hatColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_BIGHAIR:
-        return this._getlongBigHair(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getlongBigHair(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_BOB:
-        return this._getlongHairBob(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getlongHairBob(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_BUN:
-        return this._getlongHairBun(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getlongHairBun(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_CURLY:
-        return this._getlongHairCurly(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getlongHairCurly(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_CURVY:
-        return this._getlongHairCurvy(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getlongHairCurvy(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_DREADS:
-        return this._getlongHairDreads(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getlongHairDreads(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_FRIDA:
-        return this._getlongHairFrida(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getlongHairFrida(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_FRO:
-        return this._getlongHairfro(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getlongHairFro(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_FROBAND:
-        return this._getlongHairfroBand(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getlongHairFroBand(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_NOTTOOLONG:
-        return this._getlongHairNottoLong(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getlongHairNottoLong(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIRS_HAVEDSIDES:
-        return this._getlongHairHaveSides(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getlongHairHaveSides(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_MIAWALLACE:
-        return this._getlonghair_miawallace(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getLongHairMiaWallace(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_STRAIGHT:
-        return this._getlonghair_straight(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getLongHairStraight(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_STRAIGHT2:
-        return this._getlonghair_straight2(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getLongHairStraight2(hairColor, facialHair, facialHairColor, accessories);
       case Top.LONGHAIR_STRAIGHTSTRAND:
-        return this.getLONGHAIR_STRAIGHTSTRAND(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getLongHairStraightStrand(hairColor, facialHair, facialHairColor, accessories);
       case Top.SHORTHAIR_DREADS01:
-        return this.getSHORTHAIR_DREADS01(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getShortHairDreads01(hairColor, facialHair, facialHairColor, accessories);
       case Top.SHORTHAIR_DREADS02:
-        return this._getSHORTHAIR_DREADS02(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getShortHairDreads02(hairColor, facialHair, facialHairColor, accessories);
       case Top.SHORTHAIR_FRIZZLE:
-        return this._getSHORTHAIR_FRIZZLE(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getShortHairFrizzle(hairColor, facialHair, facialHairColor, accessories);
       case Top.SHORTHAIR_SHAGGYMULLET:
-        return this._getSHORTHAIR_SHAGGYMULLET(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getShortHairShaggyMullet(hairColor, facialHair, facialHairColor, accessories);
       case Top.SHORTHAIR_SHORTCURLY:
-        return this._getSHORTHAIR_SHORTCURLY(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getShortHairShortCurly(hairColor, facialHair, facialHairColor, accessories);
       case Top.SHORTHAIR_SHORTFLAT:
-        return this._getSHORTHAIR_SHORTFLAT(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getShortHairShortFlat(hairColor, facialHair, facialHairColor, accessories);
       case Top.SHORTHAIR_SHORTROUND:
-        return this._getSHORTHAIR_SHORTROUND(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getShortHairShortRound(hairColor, facialHair, facialHairColor, accessories);
       case Top.SHORTHAIR_SHORTWAVED:
-        return this._getSHORTHAIR_SHORTWAVED(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getShortHairShortWaved(hairColor, facialHair, facialHairColor, accessories);
       case Top.SHORTHAIR_SIDES:
-        return this._getSHORTHAIR_SIDES(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getShortHairShortSides(hairColor, facialHair, facialHairColor, accessories);
       case Top.SHORTHAIR_THECAESAR:
-        return this.SHORTHAIR_THECAESAR(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getShortHairTheCaesar(hairColor, facialHair, facialHairColor, accessories);
       case Top.SHORTHAIR_THECAESARSIDEPART:
-        return this._getlSHORTHAIR_THECAESARSIDEPART(hairColor, facialHair, facialHaircolor);
+        return TopsHelper.getShortHairTheCaesarSidepart(hairColor, facialHair, facialHairColor, accessories);
       default:
         return '';
     }
   }
 
-  private _getHair(facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getHair(facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id="Top" stroke-width="1" fill-rule="evenodd">
     <defs>
@@ -132,12 +118,12 @@ export class TopsServices {
       </mask>
       <g id="Mask" />
     <g id="Top/No-Hair" mask="url(#no_hair_mask)">
-    <g transform="translate(-1.000000, 0.000000)">${ this._getfacialHair(facialHair, facialHaircolor)}</g>
+    <g transform="translate(-1.000000, 0.000000)">${ TopsHelper.getFacialHair(facialHair, facialHairColor)}</g>
         </g>
       </g>`;
   }
 
-  private _geteyePatch(facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getEyePatch(facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -148,7 +134,7 @@ export class TopsServices {
       </mask>
       <g id='Mask' />
     <g id='Top/Accesories/Eyepatch' mask="url(#top_mask)">
-    <g transform='translate(-1.000000, 0.000000)'>${ this._getfacialHair(facialHair, facialHaircolor)}<path
+    <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<path
               d='M160.395307,39.7810237 C157.318088,36.6927979 154.11865,43.6386608 152.623361,45.4281124 C149.013122,49.7486528 145.540256,54.182935 141.868413,58.4518947 C134.616309,66.8823544 127.439316,75.3743141 120.233991,83.8401528 C119.140279,85.1257012 119.27271,85.2649028 117.837048,85.3885641 C116.88598,85.4708947 115.563312,84.9802173 114.5737,84.9256608 C111.823607,84.774556 109.112057,85.2348141 106.435756,85.8227012 C101.091389,86.9961608 95.4264863,88.9291124 90.7890799,91.898306 C89.5718308,92.677306 88.7874545,93.5971608 87.4670933,93.841177 C86.3183659,94.0534512 84.794416,93.6295641 83.622299,93.5194592 C81.5412806,93.3237173 78.5378542,92.4726366 76.4953793,92.9137173 C73.9027538,93.4738302 72.9174244,96.6109915 75.5604528,98.0003624 C77.570314,99.0564431 81.5706,98.4761608 83.8235816,98.6447899 C86.3971,98.8372253 85.6120649,98.704306 85.2473843,101.164306 C84.7239177,104.69758 85.5985582,108.646475 87.0885766,111.878201 C90.5482655,119.383185 100.122861,127.335201 108.8551,126.603153 C116.142123,125.992451 122.526834,119.413274 125.519389,113.099935 C127.050916,109.868871 127.954546,106.192096 128.250376,102.628403 C128.438811,100.36183 128.333722,97.9580399 127.684083,95.7632173 C127.362888,94.6783705 126.853916,93.5554995 126.308378,92.5695157 C125.866281,91.7710076 123.908799,89.9203866 123.788886,89.1165882 C123.556307,87.5602415 127.973324,83.3874995 128.816339,82.3443141 C132.788953,77.4276205 136.780344,72.5320882 140.721662,67.5889431 C144.603353,62.7201931 148.506456,57.8640076 152.489612,53.0785802 C154.294237,50.9098786 163.318023,42.7148382 160.395307,39.7810237'
               id='Badass-Eyepatch'
               fill='#28354B'
@@ -159,7 +145,7 @@ export class TopsServices {
       </g>`;
   }
 
-  private _getHat(facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getHat(facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -231,12 +217,12 @@ export class TopsServices {
   rx='62'
   ry='25'
     />
-    </g>${ this._getfacialHair(facialHair, facialHaircolor)}${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+    </g>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getHijab(hatColor: HatColor) {
+  private static getHijab(hatColor: HatColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -282,10 +268,10 @@ export class TopsServices {
       <use
     id='Hijab-Mask'
     stroke='none'
-    fill='${this.colorService._gethatColorHex(hatColor)}'
+    fill='${ColorHelper.getHatColorHex(hatColor)}'
     fill-rule='evenodd'
     href='#hijab_path2'
-      />${ this.colorService.gethatColor(hatColor, 'hijab_mask2')}<path
+      />${ ColorHelper.getHatColor(hatColor, 'hijab_mask2')}<path
               d='M72.0744416,104.959767 C71.3690172,101.246903 71,97.4161983 71,93.5 C71,59.5344879 98.7583455,32 133,32 C167.241654,32 195,59.5344879 195,93.5 C195,97.4161983 194.630983,101.246903 193.925558,104.959767 C192.341315,72.6827942 165.669927,47 133,47 C100.330073,47 73.6586845,72.6827942 72.0744428,104.959774 Z'
               id='Band'
               stroke='none'
@@ -303,12 +289,12 @@ export class TopsServices {
               fill-rule='evenodd'
               opacity='0.899999976'
               mask='url(#hijab_mask2)'
-            />${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getTurban(facialHair: FacialHair, facialHaircolor: FacialHairColor, hatColor: HatColor) {
+  private static getTurban(facialHair: FacialHair, facialHairColor: FacialHairColor, hatColor: HatColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -351,7 +337,7 @@ export class TopsServices {
       </mask>
       <g id='Mask' />
     <g id='Top/Accesories/Turban' mask='url(#turban_mask1)'>
-    <g transform='translate(-1.000000, 0.000000)'>${ this._getfacialHair(facialHair, facialHaircolor)}<g
+    <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<g
               id='Behind'
               stroke-width='1'
               fill-rule='evenodd'
@@ -375,7 +361,7 @@ export class TopsServices {
                 <mask id="turban_mask3" fill='white'>
                   <use href='#turban_path3' />
                 </mask>
-                <use id='Turban-Mask' fill='${this.colorService._gethatColorHex(hatColor)}' href='#turban_path3' />${ this.colorService.gethatColor(hatColor, 'turban_mask3')}
+                <use id='Turban-Mask' fill='${ColorHelper.getHatColorHex(hatColor)}' href='#turban_path3' />${ ColorHelper.getHatColor(hatColor, 'turban_mask3')}
                 </g>
               <path
                 d='M48.0110963,96.0123559 C48.3807929,121.112082 58.0438337,136.107963 77.0002187,141 C57.6224465,136.289117 47.9557798,121.632254 48.0002187,97.0294118 C48.0008313,96.6902213 48.0044682,96.351197 48.0110963,96.0123559 Z M152.645822,30.4681115 C153.39011,36.1953086 152.126202,42.8891982 148.000219,50.135763 C136.847465,71.5667661 76.561434,72.0039826 76.3339794,129.679698 C76.1051437,67.7612631 136.805324,67.3799133 148.000219,44.5441176 C150.669864,39.5668152 152.141299,34.8351296 152.645822,30.4681115 Z'
@@ -383,12 +369,12 @@ export class TopsServices {
                 fill-opacity='0.16'
                 fill='#000000'
               />
-            </g> ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            </g> ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getWinterHat1(hatColor: HatColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getWinterHat1(hatColor: HatColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id="Top">
     <defs>
@@ -438,7 +424,7 @@ export class TopsServices {
     <mask id="hat_mask2" fill="white">
     <use href='#hat_path1' />
       </mask>
-      <use id="hat-mask" fill="${this.colorService._gethatColorHex(hatColor)}" href='#hat_path1' />${this.colorService.gethatColor(hatColor, 'hat_mask2')}
+      <use id="hat-mask" fill="${ColorHelper.getHatColorHex(hatColor)}" href='#hat_path1' />${ColorHelper.getHatColor(hatColor, 'hat_mask2')}
       </g>
           <g id="hat-front">
             <use
@@ -448,11 +434,11 @@ export class TopsServices {
               href='#hat_path2'
             />
             <use fill="#F4F4F4" fill-rule="evenodd" href='#hat_path2' />
-          </g>${this._getfacialHair(facialHair, facialHaircolor)}${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+          </g>${TopsHelper.getFacialHair(facialHair, facialHairColor)}${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
       </g>`;
   }
 
-  private _getWinterHat2(hatColor: HatColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getWinterHat2(hatColor: HatColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top'>
     <defs>
@@ -500,7 +486,7 @@ export class TopsServices {
     <mask id="hat_mask2" fill='white'>
     <use href='#hat_path1' />
       </mask>
-      <use id='Combined-Shape' fill="${this.colorService._gethatColorHex(hatColor)}" href='#hat_path1' />${this.colorService.gethatColor(hatColor, 'hat_mask2')}<rect
+      <use id='Combined-Shape' fill="${ColorHelper.getHatColorHex(hatColor)}" href='#hat_path1' />${ColorHelper.getHatColor(hatColor, 'hat_mask2')}<rect
               id='color-dark'
               fill-opacity='0.2'
               fill='#000000'
@@ -543,11 +529,11 @@ export class TopsServices {
               <polygon id='Triangle' points='74.5 0 87 18 62 18' />
               <polygon id='Triangle' points='105.5 0 118 18 93 18' />
             </g>
-          </g>${this._getfacialHair(facialHair, facialHaircolor)}${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+          </g>${TopsHelper.getFacialHair(facialHair, facialHairColor)}${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
       </g>`;
   }
 
-  private _getWinterHat3(hatColor: HatColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getWinterHat3(hatColor: HatColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top'>
     <defs>
@@ -599,7 +585,7 @@ export class TopsServices {
     <mask id="hat_mask2" fill='white'>
     <use href='#hat_path1' />
       </mask>
-      <use id='hat-mask' fill='${this.colorService._gethatColorHex(hatColor)}' href='#hat_path1' />${this.colorService.gethatColor(hatColor, 'hat_mask2')}</g>
+      <use id='hat-mask' fill='${ColorHelper.getHatColorHex(hatColor)}' href='#hat_path1' />${ColorHelper.getHatColor(hatColor, 'hat_mask2')}</g>
           <g id='hat-front'>
             <use
               fill='black'
@@ -608,11 +594,11 @@ export class TopsServices {
               href='#hat_path2'
             />
             <use fill='#F4F4F4' fill-rule='evenodd' href='#hat_path2' />
-          </g>${this._getfacialHair(facialHair, facialHaircolor)}${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+          </g>${TopsHelper.getFacialHair(facialHair, facialHairColor)}${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
       </g>`;
   }
 
-  private _getWinterHat4(hatColor: HatColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getWinterHat4(hatColor: HatColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top'>
     <defs>
@@ -671,7 +657,7 @@ export class TopsServices {
     <mask id="hat_mask2" fill='white'>
     <use href='#hat_path1' />
       </mask>
-      <use id='hat-mask' fill='${this.colorService._gethatColorHex(hatColor)}' href='#hat_path1' /><mask id="hat_mask3" fill='white'>
+      <use id='hat-mask' fill='${ColorHelper.getHatColorHex(hatColor)}' href='#hat_path1' /><mask id="hat_mask3" fill='white'>
               <use href='#hat_path2' />
             </mask>
             <use
@@ -698,11 +684,11 @@ export class TopsServices {
               href='#hat_path4'
             />
             <use fill='#F4F4F4' fill-rule='evenodd' href='#hat_path4' />
-          </g>${this._getfacialHair(facialHair, facialHaircolor)}${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+          </g>${TopsHelper.getFacialHair(facialHair, facialHairColor)}${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
       </g>`;
   }
 
-  private _getlongBigHair(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getlongBigHair(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -731,7 +717,7 @@ export class TopsServices {
     <mask id="hair_mask3" fill='white'>
     <use href='#hair_path2' />
       </mask>
-      <use fill='${this.colorService._gethairColorHex(hairColor)}' href='#hair_path2' />${ this.colorService.gethairColor(hairColor, 'hair_mask3')}</g>
+      <use fill='${ColorHelper.getHairColorHex(hairColor)}' href='#hair_path2' />${ ColorHelper.getHairColor(hairColor, 'hair_mask3')}</g>
             <g
               id='Shadow'
               stroke-width='1'
@@ -755,12 +741,12 @@ export class TopsServices {
               fill-opacity='0.1'
               fill='#FFFFFF'
               fill-rule='evenodd'
-            />${this._getfacialHair(facialHair, facialHaircolor)}${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${TopsHelper.getFacialHair(facialHair, facialHairColor)}${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlongHairBob(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getlongHairBob(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -784,13 +770,13 @@ export class TopsServices {
     <mask id="bob_mask2" fill='white'>
     <use href='#bob_path2' />
       </mask>
-      <use id='Combined-Shape' fill='${this.colorService._gethairColorHex(hairColor)}' href='#bob_path2' />${this.colorService.gethairColor(hairColor, 'bob_mask2')}</g>${ this._getfacialHair(facialHair, facialHaircolor)}
-           ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+      <use id='Combined-Shape' fill='${ColorHelper.getHairColorHex(hairColor)}' href='#bob_path2' />${ColorHelper.getHairColor(hairColor, 'bob_mask2')}</g>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+           ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlongHairBun(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getlongHairBun(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -805,7 +791,7 @@ export class TopsServices {
       </mask>
       <g id='Mask' />
     <g id='Top/Long-Hair/Bun' mask='url(#bun_mask2)'>
-    <g transform='translate(-1.000000, 0.000000)'>${ this._getfacialHair(facialHair, facialHaircolor)}<mask id="bun_mask1" fill='white'>
+    <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="bun_mask1" fill='white'>
               <use href='#bin_apth1' />
             </mask>
             <use
@@ -814,12 +800,12 @@ export class TopsServices {
               fill='#28354B'
               fill-rule='evenodd'
               href='#bin_apth1'
-            />${this.colorService.gethairColor(hairColor, 'bun_mask1')}${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${ColorHelper.getHairColor(hairColor, 'bun_mask1')}${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlongHairCurly(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getlongHairCurly(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -851,13 +837,13 @@ export class TopsServices {
     <mask id="curly_mask2" fill='white'>
     <use href='#curly_path2' />
       </mask>
-      <use id='Curly!' fill='${this.colorService._gethairColorHex(hairColor)}' href='#curly_path2' />${this.colorService.gethairColor(hairColor, 'curly_mask2')}</g>${ this._getfacialHair(facialHair, facialHaircolor)}
-${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+      <use id='Curly!' fill='${ColorHelper.getHairColorHex(hairColor)}' href='#curly_path2' />${ColorHelper.getHairColor(hairColor, 'curly_mask2')}</g>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlongHairCurvy(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getlongHairCurvy(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
       <g id='Top' stroke-width='1' fill-rule='evenodd'>
         <defs>
@@ -889,7 +875,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
               <mask id="curvy_mask2" fill='white'>
                 <use href='#curvy_path2' />
               </mask>
-              <use id='Hair-Mask' fill='${this.colorService._gethairColorHex(hairColor)}' href='#curvy_path2' />${this.colorService.gethairColor(hairColor, 'curvy_mask2')}<path
+              <use id='Hair-Mask' fill='${ColorHelper.getHairColorHex(hairColor)}' href='#curvy_path2' />${ColorHelper.getHairColor(hairColor, 'curvy_mask2')}<path
                 d='M62.6794556,184.462132 C69.755442,174.755405 62.148959,147.786913 56.1278159,137.800593 C72.9649824,130.137708 106.213574,131.553467 155.87359,142.047871 C151.079203,150.900348 149.123448,158.803527 150.006324,165.757409 C145.469118,171.332534 141.720304,177.127222 138.759883,183.141474 L103.888915,191.746789 C81.8528509,194.400378 68.1163643,191.97216 62.6794556,184.462132 Z'
                 id='Shadow'
                 fill-opacity='0.24'
@@ -903,13 +889,13 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
               fill-opacity='0.6'
               fill='#FFFFFF'
               fill-rule='evenodd'
-            />${ this._getfacialHair(facialHair, facialHaircolor)}
-              ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+              ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlongHairDreads(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getlongHairDreads(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -931,7 +917,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
     fill-rule='evenodd'
     transform='translate(63.000000, 87.000000)'
       />
-      ${ this._getfacialHair(facialHair, facialHaircolor)}<g
+      ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<g
               id='Hair'
               stroke-width='1'
               fill-rule='evenodd'
@@ -939,7 +925,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
               <mask id="dread_mask2" fill='white'>
                 <use href='#long_path2' />
               </mask>
-              <use id='No-Woman' fill='${this.colorService._gethairColorHex(hairColor)}' href='#long_path2' />${this.colorService.gethairColor(hairColor, 'dread_mask2')}<path
+              <use id='No-Woman' fill='${ColorHelper.getHairColorHex(hairColor)}' href='#long_path2' />${ColorHelper.getHairColor(hairColor, 'dread_mask2')}<path
                 d='M85.718098,185.073467 C86.8059563,185.024663 87.900098,185 89,185 L89,185 L93,185 L93,166.610951 C81.2286384,161.018987 71.7176526,151.441235 66.2110974,139.621749 C66.7437304,141.280375 67.3851037,142.912325 68.1617154,144.509125 C73.916823,156.341882 81.4183567,166.92083 84.4877837,179.589912 C84.9233139,181.387079 85.3569126,183.222183 85.718098,185.073467 Z M164.1633,187.578199 C158.061736,185.89767 151.635699,185 145,185 L145,185 L141,185 L141,166.610951 C151.900717,161.432585 160.863061,152.836228 166.502046,142.206866 C166.424719,145.200638 166.492065,148.178617 166.874747,151.055581 C167.944997,159.099715 170.876362,166.366 169.515856,174.635875 C168.770949,179.167686 166.790265,183.511457 164.1633,187.578199 Z'
                 id='Shadows'
                 fill-opacity='0.24'
@@ -953,7 +939,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
                 fill='#FFFFFF'
                 mask='url(#dread_mask2)'
               />
-            </g>${ this.accessoryService.getAccessorySvg(this.accessory)}<g
+            </g>${ AccessoriesHelper.getAccessorySvg(accessories)}<g
               id='Group-74'
               stroke-width='1'
               fill-rule='evenodd'
@@ -964,7 +950,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       </g>`;
   }
 
-  private _getlongHairFrida(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getlongHairFrida(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1287,13 +1273,13 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
     fill-rule='nonzero'
     points='20 37 10.57 37 17 20 6 20 0 41 8.636 41 4 60'
       />
-      </g>${ this._getfacialHair(facialHair, facialHaircolor)}
-${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+      </g>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlongHairfro(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getlongHairFro(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1329,13 +1315,13 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
     <mask id="fro_mask2" fill='white'>
     <use href='#fro_path2' />
       </mask>
-      <use fill='${this.colorService._gethairColorHex(hairColor)}' href='#fro_path2' />${this.colorService.gethairColor(hairColor, 'fro_mask2')}</g>${ this._getfacialHair(facialHair, facialHaircolor)}
-${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+      <use fill='${ColorHelper.getHairColorHex(hairColor)}' href='#fro_path2' />${ColorHelper.getHairColor(hairColor, 'fro_mask2')}</g>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlongHairfroBand(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getlongHairFroBand(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1357,22 +1343,22 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       <use
     id='Hair'
     stroke='none'
-    fill='${this.colorService._gethairColorHex(hairColor)}'
+    fill='${ColorHelper.getHairColorHex(hairColor)}'
     fill-rule='evenodd'
     href='#band_path2'
-      />${this.colorService.gethairColor(hairColor, 'band_mask2')}<path
+      />${ColorHelper.getHairColor(hairColor, 'band_mask2')}<path
               d='M76.6313898,98.975 C76.2155465,96.423245 76,93.8109442 76,91.1521739 C76,62.3493236 101.295912,39 132.5,39 C163.704088,39 189,62.3493236 189,91.1521739 C189,93.8109442 188.784453,96.423245 188.36861,98.975 C184.279562,73.883217 160.823662,54.6456522 132.5,54.6456522 C104.176338,54.6456522 80.7204382,73.883217 76.6313898,98.975 Z'
               id='Band'
               stroke='none'
               fill='#92D9FF'
               fill-rule='evenodd'
-            />${ this._getfacialHair(facialHair, facialHaircolor)}
-${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlongHairNottoLong(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getlongHairNottoLong(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1392,7 +1378,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
     <mask id="long_mask2" fill='white'>
     <use href='#long_path2' />
       </mask>
-      <use id='Combined-Shape' fill='${this.colorService._gethairColorHex(hairColor)}' href='#long_path2' />${this.colorService.gethairColor(hairColor, 'long_mask2')}</g>
+      <use id='Combined-Shape' fill='${ColorHelper.getHairColorHex(hairColor)}' href='#long_path2' />${ColorHelper.getHairColor(hairColor, 'long_mask2')}</g>
             <g
               id='Top'
               opacity='0.439990942'
@@ -1405,13 +1391,13 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
                 id='Combined-Shape'
                 fill='#FFFFFF'
               />
-            </g>${ this._getfacialHair(facialHair, facialHaircolor)}
-                ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            </g>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+                ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlongHairHaveSides(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getlongHairHaveSides(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1472,13 +1458,13 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
     id='Copeton'
     fill='#E0C863'
     fill-rule='evenodd'
-      />${ this._getfacialHair(facialHair, facialHaircolor)}
-${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+      />${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlonghair_miawallace(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getLongHairMiaWallace(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1510,14 +1496,14 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
     <mask id="wall_mask2" fill='white'>
     <use href='#wall_path2' />
       </mask>
-      <use id='Combined-Shape' fill='${this.colorService._gethairColorHex(hairColor)}' href='#wall_path2' />${this.colorService.gethairColor(hairColor, 'wall_mask2')}</g>
-${ this._getfacialHair(facialHair, facialHaircolor)}
-${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+      <use id='Combined-Shape' fill='${ColorHelper.getHairColorHex(hairColor)}' href='#wall_path2' />${ColorHelper.getHairColor(hairColor, 'wall_mask2')}</g>
+${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlonghair_straight(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getLongHairStraight(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1542,20 +1528,20 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
     <mask id="long_mask2" fill='white'>
     <use href='#long_path2' />
       </mask>
-      <use id='Mask-Hair' fill='${this.colorService._gethairColorHex(hairColor)}' href='#long_path2' />${this.colorService.gethairColor(hairColor, 'long_mask2')}</g>
+      <use id='Mask-Hair' fill='${ColorHelper.getHairColorHex(hairColor)}' href='#long_path2' />${ColorHelper.getHairColor(hairColor, 'long_mask2')}</g>
             <path
               d='M192.506381,99.3351151 C197.3745,101.107702 202.263079,102.071957 207,102.148232 L207,102.148232 L207,92 C207,71.5654643 198.717268,53.0654643 185.325902,39.6740982 C198.717268,53.0654643 207,71.5654643 207,92 L207,215.608051 C194.525121,205.236892 178.490913,199 161,199 L157,199 L157,180.610951 L157,180.610951 C174.530782,172.282984 187.048193,155.114792 188.791419,134.867187 C194.569129,134.002364 199,129.018625 199,123 L199,110 C199,105.357474 196.363649,101.3307 192.506381,99.3351151 Z M190.18005,98.4258987 C189.794121,98.3201038 189.400422,98.233095 189,98.1659169 L189,97.9170491 C189.392974,98.0918644 189.786355,98.2614951 190.18005,98.4258987 Z M83,155.245847 C88.6015372,166.317951 97.7726252,175.277407 109,180.610951 L109,199 L105,199 C97.3271796,199 89.9346808,200.200199 83,202.423101 L83,155.245847 Z'
               id='Shadow'
               fill-opacity='0.24'
               fill='#000000'
               fill-rule='evenodd'
-            />${ this._getfacialHair(facialHair, facialHaircolor)}
-${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlonghair_straight2(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getLongHairStraight2(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1584,20 +1570,20 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
     <mask id="long_mask2" fill='white'>
     <use href='#long_path2' />
       </mask>
-      <use fill='${this.colorService._gethairColorHex(hairColor)}' href='#long_path2' />${this.colorService.gethairColor(hairColor, 'long_mask2')}</g>
+      <use fill='${ColorHelper.getHairColorHex(hairColor)}' href='#long_path2' />${ColorHelper.getHairColor(hairColor, 'long_mask2')}</g>
             <path
               d='M67,113 C84.8226408,80.6646674 137.535357,80.6069148 154.429684,64.2083647 C165.207546,72.6982916 182.891727,79.2665518 188.963018,97.8687161 C182.891727,76.423995 165.207546,66.5601054 154.429684,56.777113 C137.535357,75.6732583 84.8226408,75.7398069 67,113 Z'
               id='Shadow'
               fill-opacity='0.16'
               fill='#000000'
               fill-rule='evenodd'
-            />${ this._getfacialHair(facialHair, facialHaircolor)}
-${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private getLONGHAIR_STRAIGHTSTRAND(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getLongHairStraightStrand(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1626,20 +1612,20 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
     <mask id='strand_mask2' fill='white'>
     <use href='#strand_path2' />
       </mask>
-      <use fill='${this.colorService._gethairColorHex(hairColor)}' href='#strand_path2' />${this.colorService.gethairColor(hairColor, 'strand_mask2')}</g>
+      <use fill='${ColorHelper.getHairColorHex(hairColor)}' href='#strand_path2' />${ColorHelper.getHairColor(hairColor, 'strand_mask2')}</g>
             <path
               d='M59,102.418954 L59,108.837908 C78.9453743,105.750496 99.5895621,88.3902571 111.046195,62.6582378 C111.455505,61.738913 111.849027,60.8180234 112.226862,59.8960843 C116.231662,70.5822127 123.321236,78.70828 133.495584,84.2742862 C134.956498,86.4697241 136.497401,88.5566361 138.118291,90.5350224 C125.443111,85.0120855 116.812635,76.1324394 112.226862,63.8960843 C111.849027,64.8180234 111.455505,65.738913 111.046195,66.6582378 C99.5895621,92.3902571 78.9453743,109.750496 59,112.837908 L59,102.418954 Z M207,101.140388 L207,110.280776 C192.046922,109.412723 173.901259,103.744646 156.14893,93.4953343 C145.87623,87.5643877 136.866205,80.7523483 129.502994,73.639773 C128.137922,71.1289501 126.860094,68.4997578 125.669508,65.752196 C133.646468,74.2579416 144.017178,82.4910638 156.14893,89.4953343 C173.901259,99.7446457 192.046922,105.412723 207,106.280776 L207,101.140388 Z'
               id='Shadow'
               fill-opacity='0.16'
               fill='#000000'
               fill-rule='evenodd'
-            />${ this._getfacialHair(facialHair, facialHaircolor)}
-${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
+${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private getSHORTHAIR_DREADS01(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getShortHairDreads01(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1659,7 +1645,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       <g id='Mask' />
     <g id='Top/Short-Hair/Dreads-01' mask='url(#short_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
-      ${ this._getfacialHair(facialHair, facialHaircolor)}<g
+      ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<g
               id='Hair'
               stroke-width='1'
               fill-rule='evenodd'
@@ -1669,14 +1655,14 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
               </mask>
               <use
                 id='Dreads-With-Cut'
-                fill='${this.colorService._gethairColorHex(hairColor)}'
+                fill='${ColorHelper.getHairColorHex(hairColor)}'
                 href='#short_path3'
-              />${this.colorService.gethairColor(hairColor, '1_mask_1')}</g>${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+              />${ColorHelper.getHairColor(hairColor, '1_mask_1')}</g>${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getSHORTHAIR_DREADS02(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getShortHairDreads02(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1696,7 +1682,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       <g id='Mask' />
     <g id='Top/Short-Hair/Dreads-02' mask='url(#short_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
-      ${ this._getfacialHair(facialHair, facialHaircolor)}<g
+      ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<g
               id='Hair'
               stroke-width='1'
               fill-rule='evenodd'
@@ -1704,12 +1690,12 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
               <mask id="short_mask1" fill='white'>
                 <use href='#short_path3' />
               </mask>
-              <use id='Dreads' fill='${this.colorService._gethairColorHex(hairColor)}' href='#short_path3' />${this.colorService.gethairColor(hairColor, 'short_mask1')}</g>${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+              <use id='Dreads' fill='${ColorHelper.getHairColorHex(hairColor)}' href='#short_path3' />${ColorHelper.getHairColor(hairColor, 'short_mask1')}</g>${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getSHORTHAIR_FRIZZLE(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getShortHairFrizzle(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1748,21 +1734,21 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       </mask>
       <g id='Mask' />
     <g id='Top/Short-Hair/Frizzle' mask='url(#fizzle_mask2)'>
-    <g transform='translate(-1.000000, 0.000000)'>${ this._getfacialHair(facialHair, facialHaircolor)}<mask id="fizzle_mask1" fill='white'>
+    <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="fizzle_mask1" fill='white'>
               <use href='#fizzle_path1' />
             </mask>
             <use
               id='Hair-Maks'
               stroke='none'
-              fill='${this.colorService._gethairColorHex(hairColor)}'
+              fill='${ColorHelper.getHairColorHex(hairColor)}'
               fill-rule='evenodd'
-              href='#fizzle_path1'/>${this.colorService.gethairColor(hairColor, 'fizzle_mask1')}
-              ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+              href='#fizzle_path1'/>${ColorHelper.getHairColor(hairColor, 'fizzle_mask1')}
+              ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getSHORTHAIR_SHAGGYMULLET(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getShortHairShaggyMullet(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `<g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
     <rect id="mullet_path1" x='0' y='0' width='264' height='280' />
@@ -1780,28 +1766,28 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       </mask>
       <g id='Mask' />
     <g id='Top/Short-Hair/Shaggy-Mullet' mask='url(#mullet_mask1)'>
-    <g transform='translate(-1.000000, 0.000000)'>${ this.accessoryService.getAccessorySvg(this.accessory)}<mask id="mullet_mask2" fill='white'>
+    <g transform='translate(-1.000000, 0.000000)'>${ AccessoriesHelper.getAccessorySvg(accessories)}<mask id="mullet_mask2" fill='white'>
               <use href='#mullet_path2' />
             </mask>
             <use
               id='Hair'
               stroke='none'
-              fill='${this.colorService._gethairColorHex(hairColor)}'
+              fill='${ColorHelper.getHairColorHex(hairColor)}'
               fill-rule='evenodd'
               href='#mullet_path2'
-            />${this.colorService.gethairColor(hairColor, 'mullet_mask2')}<path
+            />${ColorHelper.getHairColor(hairColor, 'mullet_mask2')}<path
               d='M175.126419,166.897818 C175.841424,169.13759 176.874789,171.230601 178.55519,172.685954 C180.17619,174.090053 183.068114,173.745469 185.098621,173.802748 C186.770693,173.850632 188.444623,173.856087 190.114529,173.783655 C190.95366,173.747287 191.327571,174.79771 190.648775,175.281705 C190.518773,175.374442 190.388771,175.462634 190.25846,175.543856 C189.20761,176.198779 188.11838,176.802787 187.008721,177.356184 C184.485135,178.614206 181.821334,179.600077 179.02722,180.090436 C177.110792,180.426519 175.211229,180.489668 173.372596,180.266511 C173.858877,180.986862 174.419563,181.642356 175.071506,182.207788 C176.801481,183.708407 179.887821,183.340135 182.054832,183.401352 C183.839313,183.452528 185.625776,183.458358 187.407944,183.380946 C188.303488,183.342078 188.702535,184.464709 187.978106,184.981974 C187.839364,185.081086 187.700623,185.175341 187.561551,185.262145 C186.440057,185.962089 185.2776,186.607617 184.093342,187.199055 C181.400104,188.543555 178.557223,189.597195 175.57527,190.121262 C170.075488,191.087126 164.705859,189.943766 160.380755,186.413279 C159.16361,185.419765 158.027363,184.287616 157,183.053001 L157,180.610951 C163.949635,177.309539 170.111406,172.618864 175.126419,166.897818 Z M81.3150549,151.593977 C80.572738,153.13892 79.8051751,154.672522 79.0058562,156.190972 C74.2106831,165.300379 68.2421528,176.792949 56.4993303,177.596328 C55.4105393,177.670743 54.9804404,178.942941 55.8287461,179.588187 C66.9485528,188.041497 92.2609618,193.18734 101.273548,191.569729 C104.095212,191.063278 106.638877,190.402091 109,189.610443 L109,180.610951 C96.5625107,174.702544 86.6484598,164.344483 81.3150549,151.593977 Z'
               id='Shadow'
               stroke='none'
               fill-opacity='0.16'
               fill='#000000'
               fill-rule='evenodd'
-            />${ this._getfacialHair(facialHair, facialHaircolor)}</g>
+            />${ TopsHelper.getFacialHair(facialHair, facialHairColor)}</g>
         </g>
       </g>`;
   }
 
-  private _getSHORTHAIR_SHORTCURLY(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getShortHairShortCurly(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1840,7 +1826,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       </mask>
       <g id='Mask' />
     <g id='Top/Short-Hair/Short-Curly' mask='url(#curly_mask2)'>
-    <g transform='translate(-1.000000, 0.000000)'>${ this._getfacialHair(facialHair, facialHaircolor)}<mask id="curly_mask1" fill='white'>
+    <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="curly_mask1" fill='white'>
               <use href='#curly_path1' />
             </mask>
             <use
@@ -1849,12 +1835,12 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
               fill='#28354B'
               fill-rule='evenodd'
               href='#curly_path1'
-            />${this.colorService.gethairColor(hairColor, 'curly_mask1')}${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${ColorHelper.getHairColor(hairColor, 'curly_mask1')}${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getSHORTHAIR_SHORTFLAT(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getShortHairShortFlat(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1895,7 +1881,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       <g id='Mask' />
     <g id='Top/Short-Hair/Short-Flat' mask='url(#flat_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
-      ${ this._getfacialHair(facialHair, facialHaircolor)}<mask id="flat_mask1" fill='white'>
+      ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="flat_mask1" fill='white'>
               <use href='#flat_path1' />
             </mask>
             <use
@@ -1904,12 +1890,12 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
               fill='#1F3140'
               fill-rule='evenodd'
               href='#flat_path1'
-            />${this.colorService.gethairColor(hairColor, 'flat_mask1')}${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${ColorHelper.getHairColor(hairColor, 'flat_mask1')}${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getSHORTHAIR_SHORTROUND(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getShortHairShortRound(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -1949,7 +1935,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       <g id='Mask' />
     <g id='Top/Short-Hair/Short-Round' mask='url(#round_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
-      ${ this._getfacialHair(facialHair, facialHaircolor)}<mask id="round_mask1" fill='white'>
+      ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="round_mask1" fill='white'>
               <use href='#round_path1' />
             </mask>
             <use
@@ -1958,13 +1944,13 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
               fill='#28354B'
               fill-rule='evenodd'
               href='#round_mask1'
-            />${this.colorService.gethairColor(hairColor, 'round_mask1')}
-            ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${ColorHelper.getHairColor(hairColor, 'round_mask1')}
+            ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getSHORTHAIR_SHORTWAVED(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getShortHairShortWaved(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -2003,7 +1989,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       </mask>
       <g id='Mask' />
     <g id='Top/Short-Hair/Short-Waved' mask='url(#waved_mask2)'>
-    <g transform='translate(-1.000000, 0.000000)'>${ this._getfacialHair(facialHair, facialHaircolor)}<mask id="waved_mask1" fill='white'>
+    <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="waved_mask1" fill='white'>
               <use href='#waved_path1' />
             </mask>
             <use
@@ -2012,12 +1998,12 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
               fill='#28354B'
               fill-rule='evenodd'
               href='#waved_path1'
-            />${this.colorService.gethairColor(hairColor, 'waved_mask1')}${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+            />${ColorHelper.getHairColor(hairColor, 'waved_mask1')}${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getSHORTHAIR_SIDES(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getShortHairShortSides(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -2037,7 +2023,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       <g id='Mask' />
     <g id='Top/Short-Hair/Sides' mask='url(#side_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
-      ${ this._getfacialHair(facialHair, facialHaircolor)}<g
+      ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<g
               id='Hair'
               stroke-width='1'
               fill-rule='evenodd'
@@ -2046,13 +2032,13 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
                 <use href='#side_path3' />
               </mask>
               <use id='Sides' fill='#9E7A7A' href='#side_path3' />
-${this.colorService.gethairColor(hairColor, 'side_mask1')}</g>
-${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+${ColorHelper.getHairColor(hairColor, 'side_mask1')}</g>
+${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private _getlSHORTHAIR_THECAESARSIDEPART(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getShortHairTheCaesarSidepart(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -2092,7 +2078,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       <g id='Mask' />
     <g id='Top/Short-Hair/The-Caesar-+-Side-Part' mask='url(#caesar_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
-     ${ this._getfacialHair(facialHair, facialHaircolor)}
+     ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
      <g
               id='Hair'
               stroke-width='1'
@@ -2102,13 +2088,13 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
                 <use href='#caesar_path2' />
               </mask>
               <use id='Caesar' fill='#000000' href='#caesar_path2' />
-${this.colorService.gethairColor(hairColor, 'caesar_mask2')}</g>
-${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+${ColorHelper.getHairColor(hairColor, 'caesar_mask2')}</g>
+${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  private SHORTHAIR_THECAESAR(hairColor: HairColor, facialHair: FacialHair, facialHaircolor: FacialHairColor) {
+  private static getShortHairTheCaesar(hairColor: HairColor, facialHair: FacialHair, facialHairColor: FacialHairColor, accessories : Accessories) {
     return `
     <g id='Top' stroke-width='1' fill-rule='evenodd'>
     <defs>
@@ -2148,7 +2134,7 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
       <g id='Mask' />
     <g id='Top/Short-Hair/The-Caesar' mask='url(#caesar_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
-     ${ this._getfacialHair(facialHair, facialHaircolor)}<g
+     ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<g
               id='Hair'
               stroke-width='1'
               fill-rule='evenodd'
@@ -2156,13 +2142,13 @@ ${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
               <mask id="caesar_mask2" fill='white'>
                 <use href='#caesar_path2' />
               </mask>
-              <use id='Caesar' fill='${this.colorService._gethairColorHex(hairColor)}' href='#caesar_path2' />
-${this.colorService.gethairColor(hairColor, 'caesar_mask2')}</g>${ this.accessoryService.getAccessorySvg(this.accessory)}</g>
+              <use id='Caesar' fill='${ColorHelper.getHairColorHex(hairColor)}' href='#caesar_path2' />
+${ColorHelper.getHairColor(hairColor, 'caesar_mask2')}</g>${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
   }
 
-  public _getfacialHair(hair: FacialHair, color: FacialHairColor) {
+  public static getFacialHair(hair: FacialHair, color: FacialHairColor) {
     switch (hair) {
       case FacialHair.BLANK:
         return '';
@@ -2211,10 +2197,10 @@ ${this.colorService.gethairColor(hairColor, 'caesar_mask2')}</g>${ this.accessor
         </mask>
         <use
         id='Lite-Beard'
-        fill='${this.colorService._getfacialHairColorHex(color)}'
+        fill='${ColorHelper.getFacialHairColorHex(color)}'
         fill-rule='evenodd'
         href='#ligh_path'
-          />${this.colorService.getfacialHairColor(color, 'light_mask')} </g>`;
+          />${ColorHelper.getFacialHairColor(color, 'light_mask')} </g>`;
       case FacialHair.BEARD_MAGESTIC:
         return `
       <g
@@ -2231,10 +2217,10 @@ ${this.colorService.gethairColor(hairColor, 'caesar_mask2')}</g>${ this.accessor
         </mask>
         <use
         id='Glorious-Beard'
-        fill='${this.colorService._getfacialHairColorHex(color)}'
+        fill='${ColorHelper.getFacialHairColorHex(color)}'
         fill-rule='evenodd'
         href='#majestic_path'
-          />${this.colorService.getfacialHairColor(color, 'majestic_mask') }
+          />${ColorHelper.getFacialHairColor(color, 'majestic_mask') }
         </g>`;
       case FacialHair.MOUSTACHE_FANCY:
         return `
@@ -2255,7 +2241,7 @@ ${this.colorService.gethairColor(hairColor, 'caesar_mask2')}</g>${ this.accessor
         fill='#28354B'
         fill-rule='evenodd'
         href='#fancy_path'
-          />${this.colorService.getfacialHairColor(color, 'fancy_mask')} </g>`;
+          />${ColorHelper.getFacialHairColor(color, 'fancy_mask')} </g>`;
       case FacialHair.MOUSTACHE_MAGNUM:
         return `
       <g
@@ -2276,11 +2262,10 @@ ${this.colorService.gethairColor(hairColor, 'caesar_mask2')}</g>${ this.accessor
         fill-rule='evenodd'
         href='#magnum_path'
           />
-       ${this.colorService.getfacialHairColor(color, 'magnum_mask')}
+       ${ColorHelper.getFacialHairColor(color, 'magnum_mask')}
         </g>`;
       default:
         return '';
     }
   }
 }
-

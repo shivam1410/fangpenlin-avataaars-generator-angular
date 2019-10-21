@@ -1,41 +1,34 @@
-import {Injectable} from '@angular/core';
-import {ColorsServices} from './colors.services';
-import {Cloth} from '../enums/clothe.enum';
-import {ClothColor} from '../enums/cloth-color.enum';
-import {Graphic} from '../enums/graphic.enum';
+import { Clothes, ClothesColor, Graphic} from '../avatar.enum';
+import { ColorHelper } from './colors';
 
-@Injectable()
-export class ClothesServices {
-  constructor(private colorService: ColorsServices) {
+export class ClothesHelper {
 
-  }
-
-  public getClothSvg(cloth: Cloth, color: ClothColor, graphic: Graphic) {
-    switch (cloth) {
-      case Cloth.BLAZER_SHIRT:
-        return this._getblazeShirt();
-      case Cloth.BLAZER_SWEATER:
-        return this._getblazerSweater();
-      case Cloth.COLLAR_SWEATER:
-        return this._getcollarSweater(color);
-      case Cloth.GRAPHIC_SHIRT:
-        return this._getgraphicShirt(color, graphic);
-      case Cloth.HOODIE:
-        return this._gethoodie(color);
-      case Cloth.OVERALL:
-        return this._getoverall(color);
-      case Cloth.SHIRT_CREWNECK:
-        return this._getshirtCrewNeck(color);
-      case Cloth.SHIRT_SCOOPNECK:
-        return this._getshirtScoopNeck(color);
-      case Cloth.SHIRT_VNECK:
-        return this._getshirtVNeck(color);
+  public static getClothesSvg(clothes: Clothes, color: ClothesColor, graphic: Graphic) {
+    switch (clothes) {
+      case Clothes.BLAZER_SHIRT:
+        return ClothesHelper.getBlazerShirt();
+      case Clothes.BLAZER_SWEATER:
+        return ClothesHelper.getBlazerSweater();
+      case Clothes.COLLAR_SWEATER:
+        return ClothesHelper.getCollarSweater(color);
+      case Clothes.GRAPHIC_SHIRT:
+        return ClothesHelper.getGraphicShirt(color, graphic);
+      case Clothes.HOODIE:
+        return ClothesHelper.getHoodie(color);
+      case Clothes.OVERALL:
+        return ClothesHelper.getOveralls(color);
+      case Clothes.SHIRT_CREWNECK:
+        return ClothesHelper.getCrewNeckShirt(color);
+      case Clothes.SHIRT_SCOOPNECK:
+        return ClothesHelper.getScoopNeckShirt(color);
+      case Clothes.SHIRT_VNECK:
+        return ClothesHelper.getVNeckShirt(color);
       default:
         return '';
     }
   }
 
-  private _getblazeShirt() {
+  private static getBlazerShirt() {
     return `
     <g
     id="Clothing/Blazer-+-Shirt"
@@ -98,7 +91,7 @@ export class ClothesServices {
       </g>`;
   }
 
-  private _getblazerSweater() {
+  private static getBlazerSweater() {
     return `
     <g
     id='Clothing/Blazer-+-Sweater'
@@ -161,7 +154,7 @@ export class ClothesServices {
       </g>`;
   }
 
-  private _getcollarSweater(color: ClothColor) {
+  private static getCollarSweater(color: ClothesColor) {
     return `
     <g
     id='Clothing/Collar-+-Sweater'
@@ -180,7 +173,7 @@ export class ClothesServices {
     fill='#E6E6E6'
     fill-rule='evenodd'
     href='#collar_path'
-      />${ this.colorService.clothColor(color, 'collar_mask')}<path
+      />${ ColorHelper.getClothesColor(color, 'collar_mask')}<path
           d='M156,22.2794906 C162.181647,26.8351858 166,33.1057265 166,40.027915 C166,47.2334941 161.862605,53.7329769 155.228997,58.3271669 L149.57933,53.8764929 L145,54.207887 L146,51.0567821 L145.922229,50.995516 C152.022491,47.8530505 156,42.7003578 156,36.8768102 L156,22.2794906 Z M108,21.5714994 C101.232748,26.1740081 97,32.7397769 97,40.027915 C97,47.4261549 101.361602,54.080035 108.308428,58.6915723 L114.42067,53.8764929 L119,54.207887 L118,51.0567821 L118.077771,50.995516 C111.977509,47.8530505 108,42.7003578 108,36.8768102 L108,21.5714994 Z'
           id='Collar'
           fill='#F2F2F2'
@@ -189,7 +182,7 @@ export class ClothesServices {
       </g>`;
   }
 
-  private _getgraphicShirt(color: ClothColor, g: Graphic) {
+  private static getGraphicShirt(color: ClothesColor, g: Graphic) {
     return `
     <g
     id='Clothing/Graphic-Shirt'
@@ -208,10 +201,10 @@ export class ClothesServices {
     fill='#E6E6E6'
     fill-rule='evenodd'
     href='#shirt_path'
-      />${ this.colorService.clothColor(color, 'shirt_mask')}${this._getgraphic(g, 'shirt_mask')}</g>`;
+      />${ ColorHelper.getClothesColor(color, 'shirt_mask')}${this._getgraphic(g, 'shirt_mask')}</g>`;
   }
 
-  private _gethoodie(color: ClothColor) {
+  private static getHoodie(color: ClothesColor) {
     return `
     <g id='Clothing/Hoodie' transform='translate(0.000000, 170.000000)'>
     <defs>
@@ -228,7 +221,7 @@ export class ClothesServices {
     fill='#B7C1DB'
     fill-rule='evenodd'
     href='#hoodie_path'
-      />${this.colorService.clothColor(color, 'hoodie_mask')}<path
+      />${ColorHelper.getClothesColor(color, 'hoodie_mask')}<path
           d='M102,61.7390531 L102,110 L95,110 L95,58.1502625 C97.2037542,59.4600576 99.5467694,60.6607878 102,61.7390531 Z M169,58.1502625 L169,98.5 C169,100.432997 167.432997,102 165.5,102 C163.567003,102 162,100.432997 162,98.5 L162,61.7390531 C164.453231,60.6607878 166.796246,59.4600576 169,58.1502625 Z'
           id='Straps'
           fill='#F4F4F4'
@@ -246,7 +239,7 @@ export class ClothesServices {
       </g>`;
   }
 
-  private _getoverall(color: ClothColor) {
+  private static getOveralls(color: ClothesColor) {
     return `
     <g id='Clothing/Overall' transform='translate(0.000000, 170.000000)'>
     <defs>
@@ -263,7 +256,7 @@ export class ClothesServices {
     fill='#B7C1DB'
     fill-rule='evenodd'
     href='#overall_path'
-      />${this.colorService.clothColor(color, 'overall_mask')}<circle
+      />${ColorHelper.getClothesColor(color, 'overall_mask')}<circle
           id='Button'
           fill='#F4F4F4'
           fill-rule='evenodd'
@@ -282,7 +275,7 @@ export class ClothesServices {
       </g>`;
   }
 
-  private _getshirtCrewNeck(color: ClothColor) {
+  private static getCrewNeckShirt(color: ClothesColor) {
     return `
     <g
     id='Clothing/Shirt-Crew-Neck'
@@ -301,7 +294,7 @@ export class ClothesServices {
     fill='#E6E6E6'
     fill-rule='evenodd'
     href='#crew_path'
-      />${this.colorService.clothColor(color, 'crew_mask') }<g
+      />${ColorHelper.getClothesColor(color, 'crew_mask') }<g
           id='Shadowy'
           opacity='0.599999964'
           stroke-width='1'
@@ -321,7 +314,7 @@ export class ClothesServices {
       </g>`;
   }
 
-  private _getshirtScoopNeck(color: ClothColor) {
+  private static getScoopNeckShirt(color: ClothesColor) {
     return `
     <g
     id='Clothing/Shirt-Scoop-Neck'
@@ -340,10 +333,10 @@ export class ClothesServices {
     fill='#E6E6E6'
     fill-rule='evenodd'
     href='#scoop_path'
-      />${this.colorService.clothColor(color, 'scoop_mask')}</g>`;
+      />${ColorHelper.getClothesColor(color, 'scoop_mask')}</g>`;
   }
 
-  private _getshirtVNeck(color: ClothColor) {
+  private static getVNeckShirt(color: ClothesColor) {
     return `
     <g id='Clothing/Shirt-V-Neck' transform='translate(0.000000, 170.000000)'>
     <defs>
@@ -360,10 +353,10 @@ export class ClothesServices {
     fill='#E6E6E6'
     fill-rule='evenodd'
     href='#v_path'
-      />${this.colorService.clothColor(color, 'v_mask') }</g>`;
+      />${ColorHelper.getClothesColor(color, 'v_mask') }</g>`;
   }
 
-  private _getgraphic(graphic: Graphic, maskId: String) {
+  private static _getgraphic(graphic: Graphic, maskId: String) {
     switch (graphic) {
       case Graphic.BAT:
         return `
@@ -669,4 +662,3 @@ export class ClothesServices {
   }
 
 }
-

@@ -1,30 +1,28 @@
-import {Injectable} from '@angular/core';
-import {Accessories} from '../enums/accessories.enum';
+import {Accessories} from '../avatar.enum';
 
-@Injectable()
-export class AccessoriesServices {
-  public getAccessorySvg(acc: Accessories) {
+export class AccessoriesHelper {
+  public static getAccessorySvg(acc: Accessories) {
     switch (acc) {
       case Accessories.BLANK:
         return '';
       case Accessories.KURTA:
-        return this._getKurtaSvg();
+        return AccessoriesHelper.getKurtaSvg();
       case Accessories.PRESCRIPITON01:
-        return this._getPresciption01();
+        return AccessoriesHelper.getPresciption01();
       case Accessories.PRESCRIPITON02:
-        return this._getPresciption02();
+        return AccessoriesHelper.getPresciption02();
       case Accessories.ROUND:
-        return this._getRound();
+        return AccessoriesHelper.getRound();
       case Accessories.SUNGLASSES:
-        return this._getsunglasses();
+        return AccessoriesHelper.getSunglasses();
       case Accessories.WAYFARERS:
-        return this._getwayfarers();
+        return AccessoriesHelper.getWayfarers();
       default:
         return '';
     }
   }
 
-  private _getKurtaSvg() {
+  private static getKurtaSvg() {
     return `
     <g
     id='Top/_Resources/Kurt'
@@ -84,7 +82,7 @@ export class AccessoriesServices {
       </g>`;
   }
 
-  private _getPresciption01() {
+  private static getPresciption01() {
     return `
     <g
     id='Top/_Resources/Prescription-01'
@@ -146,7 +144,7 @@ export class AccessoriesServices {
       </g>`;
   }
 
-  private _getPresciption02() {
+  private static getPresciption02() {
     return `
     <g
     id='Top/_Resources/Prescription-02'
@@ -203,7 +201,7 @@ export class AccessoriesServices {
       </g>`;
   }
 
-  private _getRound() {
+  private static getRound() {
     return `
     <g
     id='Top/_Resources/Round'
@@ -246,7 +244,7 @@ export class AccessoriesServices {
       </g>`;
   }
 
-  private _getsunglasses() {
+  private static getSunglasses() {
     return `
     <g
     id='Top/_Resources/Sunglasses'
@@ -359,7 +357,7 @@ export class AccessoriesServices {
       </g>`;
   }
 
-  private _getwayfarers() {
+  private static getWayfarers() {
     return `
     <g
     id='Top/_Resources/Wayfarers'
