@@ -1,15 +1,8 @@
-import {Injectable} from '@angular/core';
-import {FacialHairColor} from '../enums/facial-hair-color.enum';
-import {HairColor} from '../enums/hair-color.enum';
-import {Skin} from '../enums/skin.enum';
-import {ClothColor} from '../enums/cloth-color.enum';
-import {HatColor} from '../enums/hat-color.enum';
+import {FacialHairColor, HairColor, HatColor, Skin, ClothesColor} from '../avatar.enum';
 
-@Injectable()
-export class ColorsServices {
-  private makeColor(hex: string, maskId: string) {
-    return `
-  <g
+export class ColorHelper {
+  private static makeColor(hex: string, maskId: string) {
+    return `<g
   id='Color/Palette/Gray-01'
   mask='url(#${maskId})'
   fill-rule='evenodd'
@@ -18,27 +11,27 @@ export class ColorsServices {
     </g>`;
   }
 
-  public getfacialHairColor(color: FacialHairColor, maskId: string) {
-    return this.makeColor(this._getfacialHairColorHex(color), maskId);
+  public static getFacialHairColor(color: FacialHairColor, maskId: string) {
+    return ColorHelper.makeColor(ColorHelper.getFacialHairColorHex(color), maskId);
   }
 
-  public gethairColor(color: HairColor, maskId: string) {
-    return this.makeColor(this._gethairColorHex(color), maskId);
+  public static getHairColor(color: HairColor, maskId: string) {
+    return ColorHelper.makeColor(ColorHelper.getHairColorHex(color), maskId);
   }
 
-  public gethatColor(color: HatColor, maskId: string) {
-    return this.makeColor(this._gethatColorHex(color), maskId);
+  public static getHatColor(color: HatColor, maskId: string) {
+    return ColorHelper.makeColor(ColorHelper.getHatColorHex(color), maskId);
   }
 
-  public getskinSvg(skin: Skin, maskId: string) {
-    return this.makeColor(this._getskinColorHex(skin), maskId);
+  public static getSkinColor(skin: Skin, maskId: string) {
+    return ColorHelper.makeColor(ColorHelper.getSkinColorHex(skin), maskId);
   }
 
-  public clothColor(color: ClothColor, maskId: string) {
-    return this.makeColor(this._getclothColorHex(color), maskId);
+  public static getClothesColor(color: ClothesColor, maskId: string) {
+    return ColorHelper.makeColor(ColorHelper.getClothesColorHex(color), maskId);
   }
 
-  public _getfacialHairColorHex(color: FacialHairColor) {
+  public static getFacialHairColorHex(color: FacialHairColor) {
     switch (color) {
       case FacialHairColor.AUBURN:
         return '#A55728';
@@ -63,7 +56,7 @@ export class ColorsServices {
     }
   }
 
-  public _gethairColorHex(color: HairColor) {
+  public static getHairColorHex(color: HairColor) {
     switch (color) {
       case HairColor.AURBURN:
         return '#A55728';
@@ -90,7 +83,7 @@ export class ColorsServices {
     }
   }
 
-  public _gethatColorHex(color: HatColor) {
+  public static getHatColorHex(color: HatColor) {
     switch (color) {
       case HatColor.BLACK:
         return '#262E33';
@@ -127,7 +120,7 @@ export class ColorsServices {
     }
   }
 
-  public _getskinColorHex(skin: Skin) {
+  public static getSkinColorHex(skin: Skin) {
     switch (skin) {
       case Skin.TANNED:
         return '#FD9841';
@@ -148,37 +141,37 @@ export class ColorsServices {
     }
   }
 
-  public _getclothColorHex(color: ClothColor) {
+  private static getClothesColorHex(color: ClothesColor) {
     switch (color) {
-      case ClothColor.BLACK:
+      case ClothesColor.BLACK:
         return '#262E33';
-      case ClothColor.BLUE1:
+      case ClothesColor.BLUE1:
         return '#65C9FF';
-      case ClothColor.BLUE2:
+      case ClothesColor.BLUE2:
         return '#5199E4';
-      case ClothColor.BLUE3:
+      case ClothesColor.BLUE3:
         return '#25557C';
-      case ClothColor.GRAY1:
+      case ClothesColor.GRAY1:
         return '#E6E6E6';
-      case ClothColor.GRAY2:
+      case ClothesColor.GRAY2:
         return '#929598';
-      case ClothColor.HEATHER:
+      case ClothesColor.HEATHER:
         return '#3C4F5C';
-      case ClothColor.PASTEL_BLUE:
+      case ClothesColor.PASTEL_BLUE:
         return '#B1E2FF';
-      case ClothColor.PASTEL_GREEN:
+      case ClothesColor.PASTEL_GREEN:
         return '#A7FFC4';
-      case ClothColor.PASTEL_ORANGE:
+      case ClothesColor.PASTEL_ORANGE:
         return '#FFDEB5';
-      case ClothColor.PASTEL_RED:
+      case ClothesColor.PASTEL_RED:
         return '#FFAFB9';
-      case ClothColor.PASTEL_YELLOW:
+      case ClothesColor.PASTEL_YELLOW:
         return '#FFFFB1';
-      case ClothColor.PINK:
+      case ClothesColor.PINK:
         return '#FF488E';
-      case ClothColor.RED:
+      case ClothesColor.RED:
         return '#FF5C5C';
-      case ClothColor.WHITE:
+      case ClothesColor.WHITE:
         return '#FFFFFF';
       default:
         return '';

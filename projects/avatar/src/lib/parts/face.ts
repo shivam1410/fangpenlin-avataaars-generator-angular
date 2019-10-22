@@ -1,16 +1,18 @@
-import {Injectable} from '@angular/core';
-import {Eyebrow} from '../enums/eyebrow.enum';
-import {Eyes} from '../enums/eyes.enum';
-import {Mouth} from '../enums/mouth.enum';
+import { Eyebrow, Eyes, Mouth } from '../avatar.enum';
 
-@Injectable()
-export class FaceServices {
+export class FaceHelper {
 
-  constructor() {
 
+  public static getFaceSvg(mouth: Mouth, eyes: Eyes, eyeBrow: Eyebrow) {
+    return `<g id="Face" transform="translate(76.000000, 82.000000)" fill="#000000">${FaceHelper.getMouthSvg(mouth)}
+ ${FaceHelper.getNoseSvg()}
+  ${FaceHelper.getEyesSvg(eyes)}
+  ${FaceHelper.getEyebrowSvg(eyeBrow)}
+  </g>
+  `;
   }
 
-  public getnoseSvg() {
+  private static getNoseSvg() {
     return `
     <g
     id="Nose/Default"
@@ -23,16 +25,7 @@ export class FaceServices {
       </g>`;
   }
 
-  public getfaceSvg(mouth: Mouth, eyes: Eyes, eyeBrow: Eyebrow) {
-    return `<g id="Face" transform="translate(76.000000, 82.000000)" fill="#000000">${this.getmouthSvg(mouth)}
- ${this.getnoseSvg()}
-  ${this.geteyesSvg(eyes)}
-  ${this.eyebrowSvg(eyeBrow)}
-  </g>
-  `;
-  }
-
-  public geteyesSvg(eye: Eyes) {
+  private static getEyesSvg(eye: Eyes) {
     switch (eye) {
       case Eyes.CLOSE:
         return `
@@ -280,7 +273,7 @@ export class FaceServices {
     }
   }
 
-  public eyebrowSvg(brow: Eyebrow) {
+  private static getEyebrowSvg(brow: Eyebrow) {
     switch (brow) {
       case Eyebrow.ANGRY:
         return `
@@ -467,7 +460,7 @@ export class FaceServices {
   }
 
 
-  public getmouthSvg(mouth: Mouth) {
+  private static getMouthSvg(mouth: Mouth) {
     switch (mouth) {
       case Mouth.CONCERNED:
         return `
