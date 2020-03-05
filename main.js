@@ -1230,7 +1230,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".main-heading {\n  text-align: center;\n  padding-bottom: 20px;\n}\n\n.main-heading-text {\n  color: #5D3155;\n  font-weight: 400;\n  font-size: 32px;\n}\n\n.user-avatar {\n  width: 200px;\n  height: 200px;\n\n}\n\n.start {\n  margin:1rem 19% 3rem 19%;\n}\n\n.option {\n  width: 30%;\n}\n\n.optionSelection {\n  width: 70%;\n}\n\nspacer {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-flex: 1;\n          flex-grow: 1;\n}\n\n.bottomButton{\n  background-color: #5D3155;\n}\n\n.tweetButton {\n  background-color:#1da1f2;\n  color: white;\n  text-decoration: none;\n}\n"
+module.exports = ".main-heading {\n  text-align: center;\n  padding-bottom: 20px;\n}\n\n.main-heading-text {\n  color: #5D3155;\n  font-weight: 400;\n  font-size: 32px;\n}\n\n.user-avatar {\n  width: 200px;\n  height: 200px;\n\n}\n\n.start {\n  margin:1rem 19% 3rem 19%;\n}\n\n.option {\n  width: 30%;\n}\n\n.optionSelection {\n  width: 70%;\n}\n\nspacer {\n  display: flex;\n  flex-grow: 1;\n}\n\n.bottomButton{\n  background-color: #5D3155;\n}\n\n.tweetButton {\n  background-color:#1da1f2;\n  color: white;\n  text-decoration: none;\n}\n"
 
 /***/ }),
 
