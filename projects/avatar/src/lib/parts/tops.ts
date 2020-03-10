@@ -117,7 +117,7 @@ export class TopsHelper {
     <use href="#no_hair_rect" />
       </mask>
       <g id="Mask" />
-    <g id="Top/No-Hair" mask="url(#no_hair_mask)">
+    <g id="Top/No-Hair" mask="url(${window.location.href}#no_hair_mask)">
     <g transform="translate(-1.000000, 0.000000)">${ TopsHelper.getFacialHair(facialHair, facialHairColor)}</g>
         </g>
       </g>`;
@@ -133,7 +133,7 @@ export class TopsHelper {
     <use href='#top_path' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Accesories/Eyepatch' mask="url(#top_mask)">
+    <g id='Top/Accesories/Eyepatch' mask="url(${window.location.href}#top_mask)">
     <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<path
               d='M160.395307,39.7810237 C157.318088,36.6927979 154.11865,43.6386608 152.623361,45.4281124 C149.013122,49.7486528 145.540256,54.182935 141.868413,58.4518947 C134.616309,66.8823544 127.439316,75.3743141 120.233991,83.8401528 C119.140279,85.1257012 119.27271,85.2649028 117.837048,85.3885641 C116.88598,85.4708947 115.563312,84.9802173 114.5737,84.9256608 C111.823607,84.774556 109.112057,85.2348141 106.435756,85.8227012 C101.091389,86.9961608 95.4264863,88.9291124 90.7890799,91.898306 C89.5718308,92.677306 88.7874545,93.5971608 87.4670933,93.841177 C86.3183659,94.0534512 84.794416,93.6295641 83.622299,93.5194592 C81.5412806,93.3237173 78.5378542,92.4726366 76.4953793,92.9137173 C73.9027538,93.4738302 72.9174244,96.6109915 75.5604528,98.0003624 C77.570314,99.0564431 81.5706,98.4761608 83.8235816,98.6447899 C86.3971,98.8372253 85.6120649,98.704306 85.2473843,101.164306 C84.7239177,104.69758 85.5985582,108.646475 87.0885766,111.878201 C90.5482655,119.383185 100.122861,127.335201 108.8551,126.603153 C116.142123,125.992451 122.526834,119.413274 125.519389,113.099935 C127.050916,109.868871 127.954546,106.192096 128.250376,102.628403 C128.438811,100.36183 128.333722,97.9580399 127.684083,95.7632173 C127.362888,94.6783705 126.853916,93.5554995 126.308378,92.5695157 C125.866281,91.7710076 123.908799,89.9203866 123.788886,89.1165882 C123.556307,87.5602415 127.973324,83.3874995 128.816339,82.3443141 C132.788953,77.4276205 136.780344,72.5320882 140.721662,67.5889431 C144.603353,62.7201931 148.506456,57.8640076 152.489612,53.0785802 C154.294237,50.9098786 163.318023,42.7148382 160.395307,39.7810237'
               id='Badass-Eyepatch'
@@ -183,7 +183,7 @@ export class TopsHelper {
     <use href='#top_rect_id' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Accesories/Hat' mask="url(#top_mask)"}>
+    <g id='Top/Accesories/Hat' mask="url(${window.location.href}#top_mask)"}>
 <g transform='translate(-1.000000, 0.000000)'>
   <g
     id='Hat'
@@ -197,12 +197,12 @@ export class TopsHelper {
   <path
     d='M123.182388,2 L141.817612,2 L141.817612,2 C160.609055,2 176.866947,15.0804442 180.890118,33.4361631 L190,75 L75,75 L84.1098821,33.4361631 L84.1098821,33.4361631 C88.1330533,15.0804442 104.390945,2 123.182388,2 Z'
   fill='#1F333C'
-  mask="url(#top_mask_2)"
+  mask="url(${window.location.href}#top_mask_2)"
   />
   <ellipse
     id='Hipster'
   fill='#1F333C'
-  mask='url(#top_mask_2)'
+  mask='url(${window.location.href}#top_mask_2)'
   cx='132'
   cy='87.5'
   rx='122'
@@ -211,7 +211,7 @@ export class TopsHelper {
   <ellipse
     id='Very'
   fill='#15232A'
-  mask='url(#top_mask_2)'
+  mask='url(${window.location.href}#top_mask_2)'
   cx='132'
   cy='82'
   rx='62'
@@ -260,7 +260,7 @@ export class TopsHelper {
     <use href='#hijab_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Accesories/Hijab' mask='url(#hijab_mask1)'>
+    <g id='Top/Accesories/Hijab' mask='url(${window.location.href}#hijab_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <mask id="hijab_mask2" fill='white'>
     <use href='#hijab_path2' />
@@ -278,7 +278,7 @@ export class TopsHelper {
               fill-opacity='0.5'
               fill='#FFFFFF'
               fill-rule='evenodd'
-              mask='url(#hijab_mask2)'
+              mask='url(${window.location.href}#hijab_mask2)'
             />
             <path
               d='M187.929085,104.69543 C188.631457,108.187732 189,111.800827 189,115.5 L189,138.5 C189,168.599519 164.599519,193 134.5,193 L131.5,193 C101.400481,193 77,168.599519 77,138.5 L77,115.5 L77,115.5 C77,111.800827 77.3685433,108.187732 78.0709154,104.69543 C78.0238287,105.624341 78,106.559388 78,107.5 L78,107.5 L78,130.5 C78,160.599519 102.400481,185 132.5,185 L133.5,185 C163.599519,185 188,160.599519 188,130.5 L188,130.5 L188,107.5 C188,106.559388 187.976171,105.624341 187.929085,104.69543 Z M114.16682,206.995462 C120.651206,211.981028 135.663493,213.708321 152.404574,210.756416 C169.145655,207.804512 182.661822,201.046883 187.049987,194.144193 C187.118291,194.396526 187.175421,194.652296 187.221114,194.911435 C188.930607,204.606451 173.985409,215.345413 153.84008,218.897578 C133.694752,222.449742 115.977919,217.469978 114.268426,207.774963 C114.222732,207.515823 114.188938,207.255938 114.166824,206.995464 Z M126.034638,235.921439 C134.227056,241.574977 150.421729,241.843835 167.103682,235.772101 C183.785635,229.700366 196.018656,219.084674 198.660388,209.487828 C198.803116,209.80837 198.935124,210.134883 199.056117,210.46731 C203.582768,222.904181 190.979008,238.909268 170.904831,246.215671 C150.830654,253.522074 130.887742,249.363007 126.361091,236.926135 C126.240098,236.593709 126.131343,236.258733 126.034643,235.921442 Z'
@@ -288,7 +288,7 @@ export class TopsHelper {
               fill='#000000'
               fill-rule='evenodd'
               opacity='0.899999976'
-              mask='url(#hijab_mask2)'
+              mask='url(${window.location.href}#hijab_mask2)'
             />${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
         </g>
       </g>`;
@@ -336,7 +336,7 @@ export class TopsHelper {
     <use href='#turban_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Accesories/Turban' mask='url(#turban_mask1)'>
+    <g id='Top/Accesories/Turban' mask='url(${window.location.href}#turban_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<g
               id='Behind'
               stroke-width='1'
@@ -430,7 +430,7 @@ export class TopsHelper {
             <use
               fill="black"
               fill-opacity="1"
-              filter='url(#hat_path1)'
+              filter='url(${window.location.href}#hat_path1)'
               href='#hat_path2'
             />
             <use fill="#F4F4F4" fill-rule="evenodd" href='#hat_path2' />
@@ -494,7 +494,7 @@ export class TopsHelper {
               y='21'
               width='146'
               height='46'
-              mask='url(#hat_mask2)'
+              mask='url(${window.location.href}#hat_mask2)'
             />
             <g
               id='light-triangles'
@@ -590,7 +590,7 @@ export class TopsHelper {
             <use
               fill='black'
               fill-opacity='1'
-              filter='url(#hat_path2)'
+              filter='url(${window.location.href}#hat_path2)'
               href='#hat_path2'
             />
             <use fill='#F4F4F4' fill-rule='evenodd' href='#hat_path2' />
@@ -680,7 +680,7 @@ export class TopsHelper {
             <use
               fill='black'
               fill-opacity='1'
-              filter='url(#hat_path4)'
+              filter='url(${window.location.href}#hat_path4)'
               href='#hat_path4'
             />
             <use fill='#F4F4F4' fill-rule='evenodd' href='#hat_path4' />
@@ -706,7 +706,7 @@ export class TopsHelper {
     <use href='#hair_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Big-Hair' mask='url(#hair_mask2)'>
+    <g id='Top/Long-Hair/Big-Hair' mask='url(${window.location.href}#hair_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <g
       id='Hair'
@@ -733,7 +733,7 @@ export class TopsHelper {
                 id='Shadow-Mask'
                 fill-opacity='0.16'
                 fill='#000000'
-                mask='url(#hair_mask1)'/>
+                mask='url(${window.location.href}#hair_mask1)'/>
             </g>
             <path
               d='M50.7584999,122.446288 C73.2940449,92.527377 124.24688,93.3241416 146.845581,61.302359 C162.243536,85.3904102 188.664446,105.949514 218.009146,116.926748 C218.310417,116.073073 218.089664,115.077381 218.376063,114.232679 C220.531197,100.089398 227.520377,89.8551619 217.802634,59 C206.165705,22.5393276 176.088708,13.7681718 133.002651,13.0159929 C132.336177,13.0049705 132.16951,13.0024268 132.002651,13 C88.9165934,13.7681718 58.8395963,22.5393276 47.2026676,59 C35.8139454,95.1607482 47.3716806,102.999274 47.2026676,122 C47.2350518,125.753256 46.1441426,128.691293 44.3525888,131.192923 C44.5361111,131.59459 48.5061717,125.436551 50.7584999,122.446288 Z'
@@ -760,7 +760,7 @@ export class TopsHelper {
     <use href='#bob_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Bob' mask='url(#bob_mask1)'>
+    <g id='Top/Long-Hair/Bob' mask='url(${window.location.href}#bob_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <g
       id='Hair'
@@ -790,7 +790,7 @@ export class TopsHelper {
     <use href='#bun_path2' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Bun' mask='url(#bun_mask2)'>
+    <g id='Top/Long-Hair/Bun' mask='url(${window.location.href}#bun_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="bun_mask1" fill='white'>
               <use href='#bin_apth1' />
             </mask>
@@ -819,7 +819,7 @@ export class TopsHelper {
     <use href='#curly_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Curly' mask='url(#curly_mask1)'>
+    <g id='Top/Long-Hair/Curly' mask='url(${window.location.href}#curly_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <path
       d='M105.984735,27.7643628 C114.013215,26.6267967 122.796163,26 132,26 C142.358003,26 152.182939,26.7938545 160.999342,28.2161842 C183.451688,38.7497687 199,61.559133 199,88 L199,105.044138 C187.461887,104.672508 173.831239,90.7644306 166.449951,70.7992877 C156.312295,72.8351061 144.547256,74 132,74 C120.038684,74 108.788234,72.9413637 98.9808476,71.0787685 C91.6758772,90.6271291 78.3831001,104.301811 67,105.021902 L67,88 L67,88 C67,61.1745453 83.0039076,38.0870034 105.984735,27.7643628 Z'
@@ -857,7 +857,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
           <use href='#curvy_path1' />
         </mask>
         <g id='Mask' />
-        <g id='Top/Long-Hair/Curvy' mask='url(#curvey_mask1)'>
+        <g id='Top/Long-Hair/Curvy' mask='url(${window.location.href}#curvey_mask1)'>
           <g transform='translate(-1.000000, 0.000000)'>
             <path
               d='M100.899906,42.4648024 C91.1016204,48.4721303 82.3855283,56.3273858 76.5871222,65.36024 C73.8252914,69.662826 71.5532049,74.1995784 69.4361743,78.7575668 C68.3739624,81.0447336 67.4048638,83.3600237 66.475928,85.6893613 C65.8894735,87.1594817 64.9889112,88.7449062 65.8359233,90.2878445 C66.3526427,89.9857996 66.5492598,90.0943892 66.224362,90.6353417 C68.9162579,91.3693254 72.6583769,89.3003017 74.9906073,88.5362205 C79.7539763,86.9753339 84.5203425,85.5025753 89.3986046,84.2045441 C93.8552588,83.0189378 103.79801,81.0907786 107.68879,80.1941723 L110.425245,77.215348 L111.487657,79.1702128 C113.645649,79.0042337 125.56636,77.212708 125.56636,77.212708 L126.896323,73.9898699 C128.612526,75.7530625 129.834989,76.668872 129.834989,76.668872 C132.391211,76.460454 143.488488,76.2113208 146.119841,76.2427023 C146.119841,76.2427023 153.460212,76.5012269 155.240756,76.5714137 L156.907605,75.9328981 L157.456495,77.0098503 C158.910143,77.601117 167.699367,80.6008734 169.434153,81.138079 L171.980784,80.2323702 C173.100342,82.9256202 175.920119,82.586016 178.257345,84.7132858 C181.34867,87.5271086 187.825645,89.5285179 190.917768,91.9756241 C192.024938,92.8519441 193.059576,93.7675012 194.100208,94.7015404 C195.255933,95.7385867 195.085291,95.890424 195.460742,97.0802141 C195.573237,97.4361731 196.715775,99.2788807 197.202722,99.4296139 C198.935909,99.9660566 187.048767,68.9435732 183.785603,64.9771662 C180.417736,60.8830307 158.574915,33.3231248 129.612057,34.2254634'
@@ -880,7 +880,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
                 id='Shadow'
                 fill-opacity='0.24'
                 fill='#000000'
-                mask='url(#curvy_mask2)'
+                mask='url(${window.location.href}#curvy_mask2)'
               />
             </g>
             <path
@@ -909,7 +909,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#long_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Dreads' mask='url(#long_mask2)'>
+    <g id='Top/Long-Hair/Dreads' mask='url(${window.location.href}#long_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <g
       id='template-for-hairstyles'
@@ -930,14 +930,14 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
                 id='Shadows'
                 fill-opacity='0.24'
                 fill='#000000'
-                mask='url(#dread_mask2)'
+                mask='url(${window.location.href}#dread_mask2)'
               />
               <path
                 d='M49.3607552,108.248307 C49.2357387,105.826133 47.3806025,97.711311 49.6885159,96.3093564 C52.2181977,94.7715832 51.6909542,104.01582 51.7170446,104.962941 C51.7605286,106.500263 52.928074,118.098087 50.7897482,118.046647 C48.6579451,117.995659 49.4428313,109.828495 49.3607552,108.248307 Z M57.7950752,165.998415 C57.7863784,167.012316 56.722651,166.95095 55.9633116,166.68563 C55.0256879,166.358041 55.5996767,164.201639 55.5502136,163.49457 C55.4197616,161.635525 54.5272525,156.156756 55.8904759,154.62169 C58.6158357,151.553363 57.8059462,164.569838 57.7950752,165.998415 Z M32.1210881,179.161492 C34.0501471,179.106894 32.2645853,141.329473 29.29952,141.371437 C27.2171799,141.400766 30.6611128,179.198041 32.1210881,179.161492 Z M34.3531219,198.516092 C31.9555228,198.516092 32.3963419,206.978357 33.8084848,207.654742 C35.9484412,208.679924 37.0349977,198.516092 34.3531219,198.516092 Z M49.5898072,202.054956 C49.6110057,203.112626 48.4113908,203.129321 47.6107416,202.798574 C46.701926,202.423155 47.082411,199.293461 47.0465367,198.598576 C46.9334783,196.41149 45.0299661,187.926664 46.7611729,186.367683 C48.7353466,184.59031 48.7782871,186.540953 49.3093354,187.8662 C50.8731288,191.768841 49.505557,197.898275 49.5898072,202.054956 Z M190.242397,122.33319 C190.352194,123.795609 191.311016,133.35074 189.717871,134.079016 C186.975661,135.332969 188.156795,129.428696 188.167666,128.666127 C188.274745,121.229044 187.19906,113.85423 186.381017,106.456855 C186.225562,105.052193 183.755671,94.2318284 185.564605,93.3352452 C188.272028,91.9937546 187.86817,95.5809897 188.023082,96.7451491 C189.152035,105.213731 189.651014,113.824449 190.242397,122.33319 Z M187.023004,155.587221 C184.490605,155.085459 183.16543,163.680835 184.321017,164.602687 C186.238118,166.132789 189.670093,156.113348 187.023004,155.587221 Z M186.754925,193.385172 C185.616188,193.158658 177.321615,209.117567 178.004314,210.020016 C179.303942,211.738731 190.833725,194.199633 186.754925,193.385172 Z M166.332555,200.758587 C164.551342,199.95631 156.998715,211.509915 158.926686,212.377619 C160.674743,213.163653 168.488275,201.725562 166.332555,200.758587 Z M208.425286,157.447168 C206.274459,157.447168 206.370123,169.269251 208.025233,170.015125 C209.736329,170.785817 210.967469,157.447168 208.425286,157.447168 Z M178.139603,48.8435128 C177.531371,47.9735519 170.964743,40.2233192 175.668081,41.3306242 C177.959145,41.8698375 181.116083,48.6833281 182.149372,50.7413632 C182.743472,51.9235715 186.133593,57.2006425 182.541271,56.8270286 C181.563968,56.7259543 178.951667,50.0063184 178.139603,48.8435128 Z M155.04775,33.3564939 C154.201443,33.7373274 154.215575,34.0946972 155.090147,34.4281522 C155.936998,34.0473186 155.922322,33.6904 155.04775,33.3564939 Z M70.6188876,41.486432 C68.6137316,43.3296843 61.07578,54.0047545 58.4928303,54.1116947 C53.7862308,54.3066237 62.7711125,45.0867526 63.7902688,43.9135688 C64.2452201,43.387441 66.275923,40.8222295 67.5119557,40.1914176 C68.7729918,39.5475202 72.9556091,39.3322861 70.6188876,41.486432 Z M43.2540252,69.9805849 C41.0711283,69.5519216 37.4190158,80.245492 38.693097,81.5359942 C40.6167205,83.4857354 45.7005438,70.4661025 43.2540252,69.9805849 Z M68.1928608,188.992366 C68.6054153,190.333405 72.8244505,200.071733 71.7639844,201.353211 C70.1425747,203.310623 69.6772959,200.536495 69.1467911,199.385872 C67.9689182,196.830588 64.9087316,190.540066 65.4006444,187.850317 C65.8784249,185.241788 67.775958,187.648619 68.1928608,188.992366 Z M59.986234,211.816206 C57.6913658,211.816206 57.9560747,221.618156 59.3225594,222.200687 C61.4391432,223.102685 62.8012795,211.816206 59.986234,211.816206 Z M221.791072,203.446532 C221.927503,204.049819 223.845148,209.009228 221.128485,208.290879 C219.566322,207.878008 219.325529,203.506094 218.926564,202.180847 C217.697597,198.095009 213.646519,193.018282 213.294842,188.98659 C212.955123,185.090266 215.135302,186.575246 216.80998,189.875503 C219.046145,194.283064 220.722996,198.746577 221.791072,203.446532 Z M202.089015,202.950817 C199.957212,202.941341 199.853937,213.724254 201.187265,214.35281 C203.051098,215.231344 204.808395,202.950817 202.089015,202.950817 Z M208.249611,114.654432 C209.831341,114.242012 204.839921,101.328868 203.071753,101.471004 C200.377376,101.688494 205.847663,115.273512 208.249611,114.654432 Z M181.434114,170.746831 C180.587263,171.127665 180.601939,171.485034 181.476511,171.818489 C182.322818,171.437656 182.308686,171.080286 181.434114,170.746831 Z M157.216135,225.987499 C158.009718,225.987499 158.337478,224.763778 157.165041,224.736253 C156.389939,224.742571 155.980645,225.987499 157.216135,225.987499 Z M58.6844317,170.628746 C58.7137834,168.720066 56.215084,170.119764 56.230847,171.730185 C56.26346,174.943806 58.6317074,173.476424 58.6844317,170.628746 Z M52.5187808,122.883143 C51.7148704,122.883143 51.3854791,124.119498 52.5698745,124.148828 C53.3536737,124.142962 53.7673152,122.883143 52.5187808,122.883143 Z M33.3865269,185.392722 C33.3087993,183.451554 31.6863025,185.43604 31.7770753,185.438747 C32.0651568,185.445967 33.4474045,186.856043 33.3865269,185.392722 Z M37.5995831,84.0632577 C35.2318792,84.0632577 35.5754028,89.8168218 37.0864719,90.1859235 C39.6063697,90.801845 39.9509805,84.0632577 37.5995831,84.0632577 Z M50.212933,208.325849 C47.9273051,208.325849 47.7729369,216.139704 49.3503191,216.625673 C51.8011861,217.379669 52.5931385,208.325849 50.212933,208.325849 Z M31.4567613,213.932223 C30.5849071,214.323435 30.5990394,214.691634 31.4991582,215.035467 C32.371556,214.644256 32.3568801,214.276959 31.4567613,213.932223 Z M201.455507,217.282881 C199.135636,217.282881 199.226409,226.836207 200.65051,227.481458 C202.64099,228.383907 204.139014,217.282881 201.455507,217.282881 Z M177.94561,226.161536 C175.534966,225.679629 174.272299,233.567034 175.395817,234.451885 C177.248236,235.910694 180.42148,226.656078 177.94561,226.161536 Z M157.46508,233.451204 C155.467534,233.451204 155.95836,237.025805 157.110686,237.557799 C159.104971,238.478297 159.694179,233.451204 157.46508,233.451204 Z M86.479514,19.5090896 C84.8080977,19.5090896 74.3192131,24.2532644 78.2392958,25.6588288 C80.6358078,26.5179603 90.7371413,19.5090896 86.479514,19.5090896 Z'
                 id='Highlights'
                 fill-opacity='0.300000012'
                 fill='#FFFFFF'
-                mask='url(#dread_mask2)'
+                mask='url(${window.location.href}#dread_mask2)'
               />
             </g>${ AccessoriesHelper.getAccessorySvg(accessories)}<g
               id='Group-74'
@@ -1132,7 +1132,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#frida_path2' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Frida' mask='url(#frida_mask1)'>
+    <g id='Top/Long-Hair/Frida' mask='url(${window.location.href}#frida_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <g
       id='Cabello'
@@ -1151,7 +1151,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     transform='translate(67.000000, 0.000000)'>
     <g
       id='hoja'
-    filter='url(#frida_filter5)'
+    filter='url(${window.location.href}#frida_filter5)'
     opacity='0.899999976'
     transform='translate(120.000000, 64.500000) scale(1, -1) rotate(-20.000000) translate(-120.000000, -64.500000) translate(107.000000, 57.000000)'
     fill-rule='nonzero'>
@@ -1168,7 +1168,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
       </g>
       <g
     id='hoja'
-    filter='url(#frida_filter6)'
+    filter='url(${window.location.href}#frida_filter6)'
     transform='translate(93.307368, 21.745191) scale(-1, -1) rotate(-120.000000) translate(-93.307368, -21.745191) translate(85.807368, 7.245191)'>
     <path
       d='M15,12 C15,5.9 9,0 9,0 C9,0 1.7,4.3 1,13 C0.3,21.7 6.8,23.7 6.8,23.7 C6.8,23.7 15,20.8 15,12 Z'
@@ -1183,7 +1183,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
       </g>
       <g
     id='hoja'
-    filter='url(#frida_filter7)'
+    filter='url(${window.location.href}#frida_filter7)'
     transform='translate(29.307368, 59.745191) rotate(-120.000000) translate(-29.307368, -59.745191) translate(21.807368, 45.245191)'>
     <path
       d='M15,12 C15,5.9 9,0 9,0 C9,0 1.7,4.3 1,13 C0.3,21.7 6.8,23.7 6.8,23.7 C6.8,23.7 15,20.8 15,12 Z'
@@ -1198,7 +1198,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
       </g>
       <g
     id='Flor'
-    filter='url(#frida_filter1)'
+    filter='url(${window.location.href}#frida_filter1)'
     transform='translate(13.000000, 42.000000) scale(-1, 1) translate(-13.000000, -42.000000) translate(0.000000, 29.000000)'>
     <path
       d='M24.4244753,20.9561089 C25.2601813,19.8468762 25.6139026,18.4784184 25.4208747,17.1027473 C25.2278468,15.7270762 24.5099609,14.5094298 23.401533,13.6738657 C23.1024018,13.448127 22.7077101,13.2632031 22.2596302,13.1057873 C22.7130645,12.9646232 23.1137179,12.7934099 23.4204085,12.5786628 C25.7688628,10.9342574 26.3421384,7.68540233 24.6974016,5.33647474 C23.0526648,2.98754715 19.8036678,2.41507618 17.4552135,4.05948158 C17.148523,4.2742286 16.8506035,4.59216121 16.5623958,4.97030055 C16.5681989,4.4950724 16.5289465,4.06126726 16.4191304,3.70296871 C16.0132035,2.3748027 15.1137169,1.2836091 13.8873598,0.632188307 C12.6611446,-0.0200371698 11.2540931,-0.154883395 9.92559572,0.250570203 C7.18364131,1.0892266 5.6350141,4.00181908 6.47286581,6.7436316 C6.58216096,7.10017888 6.78669399,7.47891226 7.05541252,7.86771872 C6.6074755,7.71655089 6.18638481,7.62487741 5.81372806,7.61849197 C2.94678437,7.56848119 0.573854142,9.85989025 0.523370073,12.7271653 C0.504358584,13.8654889 0.853022045,14.9255192 1.46080913,15.7935291 C2.38423063,17.1113044 3.90375474,17.9869973 5.63218533,18.0167186 C6.00484208,18.0231041 6.42832327,17.945939 6.88109576,17.8108811 C6.59932552,18.1901555 6.38197496,18.5617056 6.2605192,18.9140724 C5.69762142,20.5489044 5.99965968,22.2756795 6.92293929,23.5942594 C7.53072638,24.4622693 8.40824188,25.1534041 9.48422896,25.5235908 C12.1953795,26.4571485 15.1603315,25.0102268 16.0934159,22.2994077 C16.2148717,21.947041 16.272275,21.5203224 16.2839005,21.0473654 C16.5573519,21.4328579 16.8436218,21.7550638 17.1409542,21.9792407 C18.2505182,22.81542 19.6186447,23.168668 20.9943157,22.9756401 C22.3707915,22.7827541 23.5887693,22.0653415 24.4244753,20.9561089 Z'
@@ -1212,7 +1212,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
       </g>
       <g
     id='Flor'
-    filter='url(#frida_filter2)'
+    filter='url(${window.location.href}#frida_filter2)'
     transform='translate(20.000000, 16.000000)'>
     <path
       d='M30.5258511,33.0981022 L30.7843694,30.7838831 L33.0980227,30.5247992 C35.9451175,30.2051869 38.2084249,28.4080043 39.1519882,25.7142103 C40.2177395,22.6719541 39.217042,19.3553405 36.6052724,17.4325757 L34.7311566,16.052869 L35.6634061,13.9191036 C36.8915092,11.1127382 36.3082875,8.02353005 34.142278,5.85752056 C31.9762685,3.69151107 28.8870604,3.10828939 26.0801294,4.33582677 L23.9469296,5.26864203 L22.5666572,3.39396053 C20.6438924,0.78558504 17.3267131,-0.217940904 14.2844569,0.847810436 C11.5917943,1.79137373 9.79348029,4.05468111 9.4749994,6.90177585 L9.21591547,9.21542924 L6.90226208,9.47451317 C4.05460165,9.79355975 1.79129427,11.5918737 0.847730981,14.2845363 C-0.0896097682,16.9607941 0.549614762,19.8457897 2.51650298,21.812678 L2.51706867,21.8132437 C2.78576925,22.0819442 3.08049135,22.3348056 3.39388108,22.5656053 L5.26856258,23.9458777 L4.33518163,26.0796431 C3.10877562,28.8865742 3.6919973,31.9757823 5.85800679,34.1417918 C8.02401628,36.3078013 11.1132244,36.891023 13.9201555,35.664617 L16.0539209,34.731236 L17.4341933,36.6059175 C19.3513012,39.2165558 22.6741374,40.217819 25.7169593,39.1526333 C28.4096219,38.2079386 30.2073702,35.9451969 30.5258511,33.0981022 Z'
@@ -1226,7 +1226,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
       </g>
       <g
     id='Flor'
-    filter='url(#frida_filter3)'
+    filter='url(${window.location.href}#frida_filter3)'
     transform='translate(89.000000, 26.000000)'>
     <path
       d='M34.7579072,29.8221549 C35.9471811,28.2436316 36.4505537,26.2962107 36.1758602,24.338525 C35.9011667,22.3808393 34.8795597,20.6480348 33.3021815,19.4589627 C32.8764948,19.1377192 32.3148182,18.8745582 31.6771661,18.6505434 C32.322438,18.4496561 32.8925986,18.2060063 33.3290428,17.9004048 C36.6710739,15.5602894 37.4868893,10.9369187 35.1463023,7.59421406 C32.8057153,4.25150941 28.1821427,3.43683918 24.8401115,5.77695456 C24.4036673,6.08255608 23.979705,6.53499864 23.5695632,7.07312001 C23.5778216,6.3968338 23.5219623,5.77949571 23.3656856,5.26960932 C22.7880204,3.37952692 21.5079818,1.82667448 19.7627813,0.899652591 C18.0177827,-0.0285144339 16.0154402,-0.220410986 14.1248862,0.356580673 C10.2228742,1.55005325 8.01905852,5.69489638 9.21138596,9.59670651 C9.36692136,10.1041007 9.6579876,10.6430675 10.0403947,11.196369 C9.40294591,10.9812455 8.80370145,10.8507871 8.27338223,10.8417001 C4.19350083,10.7705309 0.816638586,14.0313823 0.744795872,18.1117353 C0.717741062,19.7316573 1.21391599,21.2401619 2.07884376,22.4754068 C3.39294359,24.3507024 5.55534329,25.5968808 8.01503297,25.6391765 C8.54535219,25.6482635 9.14799849,25.5384516 9.79232859,25.3462538 C9.39134786,25.8859905 9.08204129,26.414735 8.9092004,26.9161799 C8.10815356,29.2426717 8.53797723,31.7000054 9.85187515,33.5764461 C10.7168029,34.811691 11.965575,35.7952289 13.4967874,36.322033 C17.3549631,37.6505575 21.5743179,35.5914767 22.9021688,31.7337725 C23.0750097,31.2323275 23.1566991,30.6250741 23.173243,29.95202 C23.5623854,30.5006054 23.9697696,30.9591293 24.3928963,31.2781502 C25.9718913,32.4680977 27.9188405,32.9707967 29.8765262,32.6961032 C31.8353571,32.4216117 33.5686332,31.4006783 34.7579072,29.8221549 Z'
@@ -1240,7 +1240,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
       </g>
       <g
     id='Flor'
-    filter='url(#frida_filter4)'
+    filter='url(${window.location.href}#frida_filter4)'
     transform='translate(48.000000, 0.000000)'>
     <path
       d='M54.1379237,31.5464048 C55.9625462,24.5630399 48.1438056,19.13187 45.1845324,17.3616591 C45.6989766,14.4276922 46.8574047,4.80065356 40.7169237,1.24584505 C34.6121663,-2.28828261 26.9236153,3.44959091 24.6013353,5.39402404 C24.4009276,5.26871855 24.1656352,5.12587117 23.8977086,4.97076479 C20.8314374,3.19565841 13.1300975,-0.380512394 7.84990403,4.73636964 C2.20473848,10.2044755 5.53732179,18.7392794 6.80518652,21.4340926 C4.64577053,23.4449497 -1.57937327,30.0260297 0.986877047,37.024011 C1.69277097,38.9530347 2.99822799,40.4795811 4.86875265,41.5624535 C8.89955964,43.8959428 14.4760657,43.5196765 16.591707,43.2691852 C17.5849083,45.1496134 20.4220029,49.9813784 24.4796026,52.3303784 C26.1496784,53.2972082 27.8550402,53.7431811 29.5502657,53.6552686 C36.4552712,53.2971895 39.4664791,43.6601819 40.2201879,40.7426742 C43.0812084,40.3465884 52.3062726,38.5442744 54.1379237,31.5464048 Z'
@@ -1297,7 +1297,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#fro_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Fro' mask='url(#fro_mask1)'>
+    <g id='Top/Long-Hair/Fro' mask='url(${window.location.href}#fro_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <path
       d='M67,109.777572 C76.0375502,108.717226 88.9217814,89.3309188 94.3694073,69.3345491 C105.486404,71.0717584 118.905207,72.0867832 133.353789,72.0867832 C147.513023,72.0867832 160.683308,71.1120054 171.66752,69.4380466 C177.129582,89.3913728 189.978479,108.706688 199,109.77655 L199,89 C199,66.1159733 187.353465,45.9521405 169.664405,34.1125124 C169.136033,36.5946509 168.784517,39.3353373 168.624132,42.297284 C158.284896,40.892676 146.228147,40.0867832 133.353789,40.0867832 C120.190372,40.0867832 107.88169,40.9292706 97.3896338,42.392803 C97.2315704,39.3922173 96.8778294,36.6175705 96.3431783,34.1074375 C78.6498638,45.9463781 67,66.1127033 67,89 L67,89 L67,109.777572 Z'
@@ -1335,7 +1335,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#band_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Fro-+-Band' mask='url(#band_mask1)'>
+    <g id='Top/Long-Hair/Fro-+-Band' mask='url(${window.location.href}#band_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <mask id="band_mask2" fill='white'>
     <use href='#band_path2' />
@@ -1372,7 +1372,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#long_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Long-but-not-too-long' mask='url(#long_mask1)'>
+    <g id='Top/Long-Hair/Long-but-not-too-long' mask='url(${window.location.href}#long_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <g id='Behind' stroke-width='1' fill-rule='evenodd'>
     <mask id="long_mask2" fill='white'>
@@ -1416,7 +1416,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#side_path2' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Shaved-Sides' mask='url(#side_mask2)'>
+    <g id='Top/Long-Hair/Shaved-Sides' mask='url(${window.location.href}#side_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <g
       id='Behind'
@@ -1432,7 +1432,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
       d='M116.179148,40 L146,40 C171.405098,40 192,60.5949015 192,86 L192,154.108712 C192,180.650314 210.758775,204.349179 222.609956,226.05167 C234.461138,247.754161 215.254522,268.242596 195.770735,276.769484 C190.902336,278.900091 185.645645,280 180.331438,280 L135.26309,280 C78.9108161,280 70.2166412,216.309596 67.6972794,146.504423 L70.2166412,84.1431398 C71.212998,59.4805095 91.4964003,40 116.179148,40 Z'
     id='Hair'
     fill='#CCB55A'
-    mask='url(#side_mask3)'
+    mask='url(${window.location.href}#side_mask3)'
       />
       </g>
       <g
@@ -1450,7 +1450,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     id='Shadow'
     fill-opacity='0.16'
     fill='#000000'
-    mask='url(#side_mask1)'
+    mask='url(${window.location.href}#side_mask1)'
       />
       </g>
       <path
@@ -1478,7 +1478,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#wall_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Mia-Wallace' mask='url(#wall_mask1)'>
+    <g id='Top/Long-Hair/Mia-Wallace' mask='url(${window.location.href}#wall_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <path
       d='M69.0330562,76.212888 C81.9708809,43.1292208 95.6458945,26.5873873 110.058097,26.5873873 C110.596882,26.5873873 139.311316,26.3494141 158.112657,26.226792 C178.767149,35.5853581 193,55.3036503 193,78.114622 L193,93 L110.058097,93 L107.252975,69.820435 L103.373552,93 L69,93 L69,78.114622 C69,77.478246 69.0110772,76.844277 69.0330621,76.2128728 L69.0330562,76.212888 Z'
@@ -1517,7 +1517,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#long_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Straight' mask='url(#long_mask1)'>
+    <g id='Top/Long-Hair/Straight' mask='url(${window.location.href}#long_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <g
       id='Hair'
@@ -1559,7 +1559,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#long_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Straight' mask='url(#long_mask1)'>
+    <g id='Top/Long-Hair/Straight' mask='url(${window.location.href}#long_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <g
       id='Hair'
@@ -1601,7 +1601,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#strand_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Long-Hair/Straight-+-Strand' mask='url(#strand_mask1)'>
+    <g id='Top/Long-Hair/Straight-+-Strand' mask='url(${window.location.href}#strand_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
     <g
       id='Hair'
@@ -1643,7 +1643,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#short_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Short-Hair/Dreads-01' mask='url(#short_mask2)'>
+    <g id='Top/Short-Hair/Dreads-01' mask='url(${window.location.href}#short_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
       ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<g
               id='Hair'
@@ -1680,7 +1680,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#short_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Short-Hair/Dreads-02' mask='url(#short_mask2)'>
+    <g id='Top/Short-Hair/Dreads-02' mask='url(${window.location.href}#short_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
       ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<g
               id='Hair'
@@ -1733,7 +1733,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#fizzle_path2' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Short-Hair/Frizzle' mask='url(#fizzle_mask2)'>
+    <g id='Top/Short-Hair/Frizzle' mask='url(${window.location.href}#fizzle_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="fizzle_mask1" fill='white'>
               <use href='#fizzle_path1' />
             </mask>
@@ -1765,7 +1765,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#mullet_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Short-Hair/Shaggy-Mullet' mask='url(#mullet_mask1)'>
+    <g id='Top/Short-Hair/Shaggy-Mullet' mask='url(${window.location.href}#mullet_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>${ AccessoriesHelper.getAccessorySvg(accessories)}<mask id="mullet_mask2" fill='white'>
               <use href='#mullet_path2' />
             </mask>
@@ -1825,7 +1825,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#curly_path2' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Short-Hair/Short-Curly' mask='url(#curly_mask2)'>
+    <g id='Top/Short-Hair/Short-Curly' mask='url(${window.location.href}#curly_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="curly_mask1" fill='white'>
               <use href='#curly_path1' />
             </mask>
@@ -1879,7 +1879,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#flat_path2' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Short-Hair/Short-Flat' mask='url(#flat_mask2)'>
+    <g id='Top/Short-Hair/Short-Flat' mask='url(${window.location.href}#flat_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
       ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="flat_mask1" fill='white'>
               <use href='#flat_path1' />
@@ -1933,7 +1933,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#round_path2' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Short-Hair/Short-Round' mask='url(#round_mask2)'>
+    <g id='Top/Short-Hair/Short-Round' mask='url(${window.location.href}#round_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
       ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="round_mask1" fill='white'>
               <use href='#round_path1' />
@@ -1988,7 +1988,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#waved_path2' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Short-Hair/Short-Waved' mask='url(#waved_mask2)'>
+    <g id='Top/Short-Hair/Short-Waved' mask='url(${window.location.href}#waved_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<mask id="waved_mask1" fill='white'>
               <use href='#waved_path1' />
             </mask>
@@ -2021,7 +2021,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#side_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Short-Hair/Sides' mask='url(#side_mask2)'>
+    <g id='Top/Short-Hair/Sides' mask='url(${window.location.href}#side_mask2)'>
     <g transform='translate(-1.000000, 0.000000)'>
       ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<g
               id='Hair'
@@ -2076,7 +2076,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#caesar_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Short-Hair/The-Caesar-+-Side-Part' mask='url(#caesar_mask1)'>
+    <g id='Top/Short-Hair/The-Caesar-+-Side-Part' mask='url(${window.location.href}#caesar_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
      ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}
      <g
@@ -2132,7 +2132,7 @@ ${ AccessoriesHelper.getAccessorySvg(accessories)}</g>
     <use href='#caesar_path1' />
       </mask>
       <g id='Mask' />
-    <g id='Top/Short-Hair/The-Caesar' mask='url(#caesar_mask1)'>
+    <g id='Top/Short-Hair/The-Caesar' mask='url(${window.location.href}#caesar_mask1)'>
     <g transform='translate(-1.000000, 0.000000)'>
      ${ TopsHelper.getFacialHair(facialHair, facialHairColor)}<g
               id='Hair'
@@ -2174,7 +2174,7 @@ ${ColorHelper.getHairColor(hairColor, 'caesar_mask2')}</g>${ AccessoriesHelper.g
         />
         <g
           id="Color/Hair/Brown"
-        mask="url(#facial_hair_mask)"
+        mask="url(${window.location.href}#facial_hair_mask)"
         fill="#B58143">
         <g transform="translate(-32.000000, 0.000000)" id="Color">
       <rect x="0" y="0" width="264" height="244" />

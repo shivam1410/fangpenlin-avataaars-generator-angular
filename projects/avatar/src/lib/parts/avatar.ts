@@ -52,7 +52,7 @@ export class AvatarHelper {
   />
   <g
     id="Color/Palette/Blue-01"
-  mask="url(#mask-2)"
+  mask="url(${window.location.href}#mask-2)"
   fill="#65C9FF">
   <rect id="pen-Color" x="0" y="0" width="240" height="240" />
     </g>
@@ -65,7 +65,7 @@ export class AvatarHelper {
     id="Avataaar"
   stroke-width="1"
   fill-rule="evenodd"
-  mask="url(#mask-4)">
+  mask="url(${window.location.href}#mask-4)">
   <g id="Body" transform="translate(32.000000, 36.000000)">
   <mask id="mask-6" fill="white">
   <use href="#path-5" />
@@ -76,7 +76,7 @@ export class AvatarHelper {
   id="Neck-Shadow"
   fill-opacity="0.100000001"
   fill="#000000"
-  mask="url(#mask-6)"
+  mask="url(${window.location.href}#mask-6)"
     /></g>
  ${ClothesHelper.getClothesSvg(options.clothes, options.clothColor, options.graphic)}
   ${FaceHelper.getFaceSvg(options.mouth, options.eyes, options.eyebrow)}

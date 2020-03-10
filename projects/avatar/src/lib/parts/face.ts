@@ -187,7 +187,7 @@ export class FaceHelper {
     <circle
       fill-opacity='0.699999988'
     fill='#000000'
-    mask='url(#squint_mask)'
+    mask='url(${window.location.href}#squint_mask)'
     cx='14'
     cy='10'
     r='6'
@@ -201,7 +201,7 @@ export class FaceHelper {
     <circle
       fill-opacity='0.699999988'
     fill='#000000'
-    mask='url(#squint_mask2)'
+    mask='url(${window.location.href}#squint_mask2)'
     cx='14'
     cy='10'
     r='6'
@@ -489,7 +489,7 @@ export class FaceHelper {
       id="Teeth"
     fill="#FFFFFF"
     fill-rule="evenodd"
-    mask="url(#mouth_mask)"
+    mask="url(${window.location.href}#mouth_mask)"
     x="39"
     y="2"
     width="31"
@@ -500,7 +500,7 @@ export class FaceHelper {
       id="Tongue"
     stroke-width="1"
     fill-rule="evenodd"
-    mask="url(#mouth_mask)"
+    mask="url(${window.location.href}#mouth_mask)"
     fill="#FF4F6D">
     <g transform="translate(38.000000, 24.000000)">
     <circle id="friend?" cx="11" cy="11" r="11" />
@@ -595,7 +595,7 @@ export class FaceHelper {
     id='Grimace-Teeth'
     fill='#E6E6E6'
     fill-rule='evenodd'
-    mask='url(#grimace_mask)'
+    mask='url(${window.location.href}#grimace_mask)'
       />
       </g>`;
       case Mouth.SAD:
@@ -638,7 +638,7 @@ export class FaceHelper {
       id='Teeth'
     fill='#FFFFFF'
     fill-rule='evenodd'
-    mask='url(#scream_mask)'
+    mask='url(${window.location.href}#scream_mask)'
     x='39'
     y='2'
     width='31'
@@ -649,7 +649,7 @@ export class FaceHelper {
       id='Tongue'
     stroke-width='1'
     fill-rule='evenodd'
-    mask='url(#scream_mask)'
+    mask='url(${window.location.href}#scream_mask)'
     fill='#FF4F6D'>
     <g transform='translate(38.000000, 32.000000)' id='Say-ahhhh'>
     <circle cx='11' cy='11' r='11' />
@@ -689,7 +689,7 @@ export class FaceHelper {
       id='Teeth'
     fill='#FFFFFF'
     fill-rule='evenodd'
-    mask='url(#smile_mask)'
+    mask='url(${window.location.href}#smile_mask)'
     x='39'
     y='2'
     width='31'
@@ -700,7 +700,7 @@ export class FaceHelper {
       id='Tongue'
     stroke-width='1'
     fill-rule='evenodd'
-    mask='url(#smile_mask)'
+    mask='url(${window.location.href}#smile_mask)'
     fill='#FF4F6D'>
     <g transform='translate(38.000000, 24.000000)'>
     <circle cx='11' cy='11' r='11' />
@@ -731,7 +731,7 @@ export class FaceHelper {
       id='Teeth'
     fill='#FFFFFF'
     fill-rule='evenodd'
-    mask='url(#tongue_mask)'
+    mask='url(${window.location.href}#tongue_mask)'
     x='39'
     y='2'
     width='31'
@@ -816,7 +816,7 @@ export class FaceHelper {
       id='Teeth'
     fill='#FFFFFF'
     fill-rule='evenodd'
-    mask='url(#vomit_mask)'
+    mask='url(${window.location.href}#vomit_mask)'
     x='39'
     y='0'
     width='31'
@@ -828,7 +828,7 @@ export class FaceHelper {
     <use
       fill='black'
     fill-opacity='1'
-    filter='url(#vomit_filter)'
+    filter='url(${window.location.href}#vomit_filter)'
     href='#vomit_path2'
       />
       </g>
