@@ -1,4 +1,5 @@
-# fangpenlin-avataaars-generator-angular
+# FAGA
+FAGA stands for Fangpenlin Avataaars Generator Angular
 
 ![alt text](https://raw.githubusercontent.com/shivam1410/fangpenlin-avataaars-generator-angular/master/src/assets/meta.png)
 
