@@ -1,6 +1,6 @@
-core-js@2.6.11
+core-js@2.6.12
 MIT
-Copyright (c) 2014-2019 Denis Pushkarev
+Copyright (c) 2014-2020 Denis Pushkarev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -175,7 +175,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-file-saver@2.0.2
+file-saver@2.0.5
 MIT
 The MIT License
 
@@ -417,7 +417,7 @@ Apache License
  See the License for the specific language governing permissions and
  limitations under the License.
 
-tslib@1.13.0
+tslib@1.14.1
 0BSD
 Copyright (c) Microsoft Corporation.
 
